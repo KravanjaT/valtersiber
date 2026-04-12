@@ -66,7 +66,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 #pg-pon{justify-content:space-between;padding-bottom:calc(var(--sab)+8px)}
 .ph{text-align:center;display:flex;flex-direction:column;align-items:center;gap:7px;padding:clamp(10px,1.8vh,20px) 1rem clamp(6px,1.2vh,14px);flex-shrink:0}
 .ph-t{font-family:'Cinzel Decorative',serif;font-size:clamp(1rem,2.8vw,2rem);color:var(--gold);letter-spacing:.1em;text-shadow:0 0 24px rgba(212,175,55,.5)}
-.ph-s{font-size:clamp(.44rem,.95vw,.64rem);letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600}
+.ph-s{font-size:clamp(.44rem,.95vw,.64rem);letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;display:none}
+@media(hover:none){.ph-s{display:block}}
 .ph-d{width:52px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .co{width:100%;overflow:hidden;flex:1;display:flex;align-items:center;mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent)}
 .ct{display:flex;align-items:center;gap:clamp(10px,2vw,32px);width:max-content;will-change:transform;cursor:grab;user-select:none;padding:8px 0 20px}
