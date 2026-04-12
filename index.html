@@ -24,9 +24,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 .nv a.on{color:var(--gold)}
 .nv a.on::after{transform:scaleX(1)}
 .lsw{display:flex;align-items:center;gap:4px;flex-shrink:0;border-left:1px solid rgba(212,175,55,.22);padding-left:14px}
-.lb{cursor:pointer;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;font-size:22px;line-height:1;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:4px;padding:4px 8px;opacity:.7;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.lb{cursor:pointer;display:flex;align-items:center;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:4px;padding:5px 9px;opacity:.7;transition:all .2s;color:rgba(212,175,55,.8)}
 .lb:hover{opacity:1;border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.1);transform:scale(1.06)}
-.lb.on{opacity:1;border-color:var(--gold);background:rgba(212,175,55,.2);box-shadow:0 0 8px rgba(212,175,55,.3)}
+.lb.on{opacity:1;border-color:var(--gold);background:rgba(212,175,55,.2);box-shadow:0 0 8px rgba(212,175,55,.3);color:var(--gold)}
 @media(max-width:680px){nav{padding:0 10px;padding-top:var(--sat);gap:8px}.nl img{height:34px}.nv a{font-size:.52rem;padding:var(--sat) 9px 0;letter-spacing:.16em}.lsw{padding-left:10px}.lb{font-size:20px;padding:3px 6px}}
 @media(max-width:400px){.nv a{font-size:.44rem;padding:var(--sat) 6px 0}.lb{font-size:18px;padding:3px 5px}}
 
@@ -140,7 +140,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 /* AGE GATE */
 #ag{cursor:auto;position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(3,1,0,.98);backdrop-filter:blur(20px);padding:clamp(16px,4vw,32px)}
 .agb{text-align:center;max-width:480px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
-.aglogo img{width:clamp(110px,28vw,155px);filter:drop-shadow(0 4px 18px rgba(0,0,0,.8))}
+.aglogo img{width:clamp(110px,28vw,180px);filter:drop-shadow(0 4px 18px rgba(0,0,0,.8));border-radius:50%}
 .aglr{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:6px;padding:7px 14px}
 .agll{font-size:.48rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6);padding-right:4px}
 .agsep{width:1px;height:20px;background:rgba(212,175,55,.2);margin:0 4px}
@@ -166,8 +166,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
     <a href="#" id="n3" onclick="sp('kontakt',this);return false"></a>
   </div>
   <div class="lsw">
-    <button class="lb on" id="bSL" onclick="setLang('sl')" title="SL">🇸🇮</button>
-    <button class="lb" id="bEN" onclick="setLang('en')" title="EN">🇬🇧</button>
+    <button class="lb on" id="bSL" onclick="setLang('sl')" title="Slovenščina">
+      <svg width="20" height="14" viewBox="0 0 20 14" style="display:block"><rect width="20" height="14" fill="#E4002B"/><rect width="20" height="9.33" fill="#003DA5"/><rect width="20" height="4.67" fill="#fff"/><!-- grb --><rect x="1.5" y="1.2" width="4" height="5.5" rx="0.5" fill="#003DA5" stroke="#fff" stroke-width="0.3"/><polygon points="2,5.5 3.5,2.5 5,5.5" fill="#fff"/><line x1="2.5" y1="6" x2="2.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><line x1="3.5" y1="6" x2="3.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><line x1="4.5" y1="6" x2="4.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><circle cx="2.3" cy="1.8" r="0.35" fill="#FFCC00"/><circle cx="3.5" cy="1.3" r="0.35" fill="#FFCC00"/><circle cx="4.7" cy="1.8" r="0.35" fill="#FFCC00"/></svg>
+      <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">SL</span>
+    </button>
+    <button class="lb" id="bEN" onclick="setLang('en')" title="English">
+      <svg width="20" height="14" viewBox="0 0 60 40" style="display:block"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/></svg>
+      <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">EN</span>
+    </button>
   </div>
 </nav>
 
@@ -233,12 +239,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 
 <div id="ag">
   <div class="agb">
-    <div class="aglogo"><img src="logo_nav.png" alt="Valter-Siber"/></div>
+    <div class="aglogo"><img src="logo_nav_new.png" alt="Valter-Siber"/></div>
     <div class="aglr">
       <span class="agll">Jezik / Language</span>
       <div class="agsep"></div>
-      <button class="lb on" id="agSL" onclick="setLang('sl')">🇸🇮</button>
-      <button class="lb" id="agEN" onclick="setLang('en')">🇬🇧</button>
+      <button class="lb on" id="agSL" onclick="setLang('sl')">
+        <svg width="20" height="14" viewBox="0 0 20 14" style="display:block"><rect width="20" height="14" fill="#E4002B"/><rect width="20" height="9.33" fill="#003DA5"/><rect width="20" height="4.67" fill="#fff"/><!-- grb --><rect x="1.5" y="1.2" width="4" height="5.5" rx="0.5" fill="#003DA5" stroke="#fff" stroke-width="0.3"/><polygon points="2,5.5 3.5,2.5 5,5.5" fill="#fff"/><line x1="2.5" y1="6" x2="2.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><line x1="3.5" y1="6" x2="3.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><line x1="4.5" y1="6" x2="4.5" y2="6.7" stroke="#E4002B" stroke-width="0.5"/><circle cx="2.3" cy="1.8" r="0.35" fill="#FFCC00"/><circle cx="3.5" cy="1.3" r="0.35" fill="#FFCC00"/><circle cx="4.7" cy="1.8" r="0.35" fill="#FFCC00"/></svg>
+        <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">SL</span>
+      </button>
+      <button class="lb" id="agEN" onclick="setLang('en')">
+        <svg width="20" height="14" viewBox="0 0 60 40" style="display:block"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/></svg>
+        <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">EN</span>
+      </button>
     </div>
     <div class="agdiv"></div>
     <div class="agtt" id="agT"></div>
@@ -371,7 +383,9 @@ function openAnim(b){
   document.getElementById('an').textContent=b.fullname||b.name;
   document.getElementById('at').textContent=b.type;
   document.getElementById('avol').textContent=b.vol+'% vol.';
-  document.getElementById('ad').textContent=b.desc;
+  // odstrani "— XX% vol." z konca opisa, ker je že prikazano pod steklenico
+  var cleanDesc=b.desc.replace(/\s*—\s*\d+%\s*vol\./,'');
+  document.getElementById('ad').textContent=cleanDesc;
   document.getElementById('aig').innerHTML='<strong>'+t.sest+'</strong> '+b.ing;
   ma.classList.add('on');
 }
