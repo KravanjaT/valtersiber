@@ -10,10 +10,9 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#d4af37;--gl:#f0d060;--dk:#060402;--nav:64px;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--dk);font-family:'Cinzel',serif;color:#fff}
-body{cursor:none}
-@media(hover:none){body{cursor:auto}}
-#cDiamond{position:fixed;pointer-events:none;z-index:9999;width:10px;height:10px;background:var(--gold);transform:translate(-50%,-50%) rotate(45deg);box-shadow:0 0 8px rgba(212,175,55,.7);transition:transform .1s ease;mix-blend-mode:normal}
-@media(hover:none){#cDiamond{display:none}}
+body{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='white' stroke='%23333' stroke-width='1' d='M5.5 3.5v12l3-2.5 1.5 4.5 1.5-.5-1.5-4.5H13z'/%3E%3C/svg%3E") 5 3, pointer}
+
+#cDiamond{display:none}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;padding:0 22px;padding-top:var(--sat);height:calc(var(--nav)+var(--sat));background:rgba(4,2,1,.96);border-bottom:1px solid rgba(212,175,55,.25);backdrop-filter:blur(12px);gap:14px}
