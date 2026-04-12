@@ -16,7 +16,7 @@ body{cursor:pointer}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;padding:0 22px;padding-top:var(--sat);height:calc(var(--nav)+var(--sat));background:rgba(4,2,1,.96);border-bottom:1px solid rgba(212,175,55,.25);backdrop-filter:blur(12px);gap:14px}
-.nl img{height:42px;filter:drop-shadow(0 1px 6px rgba(0,0,0,.7));flex-shrink:0}
+.nl img{height:44px;filter:drop-shadow(0 1px 6px rgba(0,0,0,.7));flex-shrink:0;border-radius:50%}
 .nv{display:flex;flex:1;justify-content:center;align-items:stretch;height:calc(var(--nav)+var(--sat))}
 .nv a{font-size:.72rem;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:rgba(212,175,55,.7);text-decoration:none;padding:var(--sat) 16px 0;display:flex;align-items:center;transition:color .2s,background .2s;position:relative;white-space:nowrap}
 .nv a::after{content:'';position:absolute;bottom:0;left:16px;right:16px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .25s;transform-origin:center}
@@ -24,8 +24,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 .nv a.on{color:var(--gold)}
 .nv a.on::after{transform:scaleX(1)}
 .lsw{display:flex;align-items:center;gap:4px;flex-shrink:0;border-left:1px solid rgba(212,175,55,.22);padding-left:14px}
-.lb{cursor:pointer;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;font-size:22px;line-height:1;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:4px;padding:4px 8px;cursor:pointer;opacity:.45;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.lb:hover{opacity:.9;border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.1);transform:scale(1.06)}
+.lb{cursor:pointer;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;font-size:22px;line-height:1;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:4px;padding:4px 8px;opacity:.7;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.lb:hover{opacity:1;border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.1);transform:scale(1.06)}
 .lb.on{opacity:1;border-color:var(--gold);background:rgba(212,175,55,.2);box-shadow:0 0 8px rgba(212,175,55,.3)}
 @media(max-width:680px){nav{padding:0 10px;padding-top:var(--sat);gap:8px}.nl img{height:34px}.nv a{font-size:.52rem;padding:var(--sat) 9px 0;letter-spacing:.16em}.lsw{padding-left:10px}.lb{font-size:20px;padding:3px 6px}}
 @media(max-width:400px){.nv a{font-size:.44rem;padding:var(--sat) 6px 0}.lb{font-size:18px;padding:3px 5px}}
@@ -158,7 +158,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 <div id="cDiamond"></div>
 
 <nav>
-  <div class="nl"><img src="logo_nav.png" alt="Valter-Siber"/></div>
+  <div class="nl"><img src="logo_nav_new.png" alt="Valter-Siber"/></div>
   <div class="nv" id="nv">
     <a href="#" class="on" id="n0" onclick="sp('home',this);return false"></a>
     <a href="#" id="n1" onclick="sp('ponudba',this);return false"></a>
@@ -194,7 +194,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:cent
 
 <div class="pg" id="pg-onas">
   <div class="ow">
-    <div class="ol2"><img src="logo_web.png" alt="Valter-Siber"/></div>
+    <div class="ol2"><img src="logo_web_new.png" alt="Valter-Siber"/></div>
     <div class="oc">
       <div class="ot" id="onT"></div><div class="os" id="onS"></div><div class="od2"></div>
       <p class="op" id="onP1"></p>
