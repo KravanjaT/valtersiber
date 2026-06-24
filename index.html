@@ -262,6 +262,13 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   .ph .pon-divider{margin:4px auto 2px !important}
   .aglr{display:grid !important;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:280px;margin:8px auto 16px}
   #ag .lb{width:100% !important;padding:12px 10px !important}
+  .bi {
+    height: clamp(160px, 26vh, 280px) !important;
+  }
+  .bc.sel {
+    transform: translateY(-12px) scale(1.12) !important;
+    z-index: 10;
+  }
 }
 @media(max-width:400px){
   .nv{left:10px;right:10px;padding:0 4px;height:52px}
@@ -675,8 +682,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 }
 @media (max-height: 850px) {
   .ph {
-    margin-top: 70px !important;
-    padding-top: 15px !important;
+    margin-top: 25px !important;
+    padding-top: 10px !important;
     padding-bottom: 4px !important;
     gap: 4px !important;
   }
@@ -686,8 +693,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 }
 @media (max-height: 720px) {
   .ph {
-    margin-top: 60px !important;
-    padding-top: 10px !important;
+    margin-top: 15px !important;
+    padding-top: 5px !important;
     padding-bottom: 2px !important;
   }
   .bi {
@@ -696,7 +703,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 }
 @media (max-height: 480px) {
   .ph {
-    margin-top: 45px !important;
+    margin-top: 10px !important;
     padding-top: 5px !important;
   }
   .bi {
