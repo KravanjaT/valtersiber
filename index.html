@@ -1221,7 +1221,7 @@ function setLang(l){
   }
 
   rebuildCarousel();
-  if (typeof updateMapPopups === 'function') {
+  if (typeof updateMapPopups === 'function' && typeof markers !== 'undefined' && markers && markers.length > 0) {
     updateMapPopups(l);
   }
 }
@@ -2037,6 +2037,8 @@ mapLocs.forEach(function(loc) {
   });
   markers.push(m);
 });
+
+updateMapPopups(userLang);
 
 function updateMapPopups(l) {
   var linkText = "Odpri Google Maps / Street View →";
