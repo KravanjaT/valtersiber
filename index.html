@@ -203,7 +203,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#d4af37;--gl:#f0d060;--dk:#060402;--nav:70px;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
@@ -623,18 +622,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 }
 
 /* NEW PREMIUM ENHANCEMENTS */
-.leaflet-popup-content-wrapper {
-  background: #ffffff !important;
-  color: #333333 !important;
-  border-radius: 6px !important;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.4) !important;
-}
-.leaflet-popup-tip {
-  background: #ffffff !important;
-}
-.leaflet-popup-close-button {
-  color: #666666 !important;
-}
 .b-stars {
   color: var(--gold);
   font-size: 0.72rem;
@@ -895,7 +882,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
     <div class="pon-divider"><span></span><i>✦</i><span></span></div>
   </div>
   <div id="lokMapContainer" style="max-width: 1400px; width: 95%; height: clamp(280px, 60vh, 750px); margin: 20px auto 40px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.4); overflow: hidden; position: relative; z-index: 5; box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
-    <div id="lokMap" style="width: 100%; height: 100%; display: block;"></div>
+    <iframe id="lokMapIframe" src="https://maps.google.com/maps?q=Dolina+So%C4%8De&t=&z=9&ie=UTF8&iwloc=&output=embed" width="100%" style="border:0; display:block; height: 100%;" allowfullscreen="" loading="lazy"></iframe>
   </div>
   <div class="kw" style="margin-bottom: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1200px; width: 92%; gap: 24px; padding: 0; align-items: start; justify-content: center;">
     <!-- Domačija Valter-Siber -->
@@ -904,7 +891,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
       <div class="ks" id="lokDomačijaS" style="display:none;">Poljubinj · Tolmin</div>
       <div class="kd"></div>
       <div class="ki">
-        <a href="https://maps.google.com/?q=Poljubinj+66A,+5220+Tolmin" onclick="focusLoc(0); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Poljubinj+66A,+5220+Tolmin,+Slovenia" onclick="focusLoc(0); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span>Poljubinj 66A, 5220 Tolmin</span>
         </a>
         <p class="ktx" id="lokDomačijaDesc" style="font-family:'EB Garamond',serif; font-size:1.15rem; color:rgba(255,248,220,0.85); line-height:1.6; margin-top:15px; text-align:justify;">
@@ -919,16 +906,16 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
       <div class="ks" id="lokKzS" style="display:none;">Prodajalne Zadrugarka</div>
       <div class="kd"></div>
       <div class="ki" style="display: flex; flex-direction: column; gap: 4px;">
-        <a href="https://maps.google.com/?q=Zadrugarka+Rutarjeva+ul.+35,+Tolmin" onclick="focusLoc(1); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Rutarjeva+ulica+35,+5220+Tolmin,+Slovenia" onclick="focusLoc(1); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Tolmin:</strong> Rutarjeva ul. 35</span>
         </a>
-        <a href="https://maps.google.com/?q=Zadrugarka+Gradnikova+ul.+13A,+Kanal" onclick="focusLoc(2); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Gradnikova+ulica+13A,+5213+Kanal,+Slovenia" onclick="focusLoc(2); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Kanal ob Soči:</strong> Gradnikova ul. 13A</span>
         </a>
-        <a href="https://maps.google.com/?q=Zadrugarka+Trg+golobarskih+zrtev+49,+Bovec" onclick="focusLoc(3); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Trg+golobarskih+%C5%BErtev+49,+5230+Bovec,+Slovenia" onclick="focusLoc(3); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Bovec:</strong> Trg golobarskih žrtev 49</span>
         </a>
-        <a href="https://maps.google.com/?q=Zadruga+Tolmin+Kidriceva+ulica+20,+Nova+Gorica" onclick="focusLoc(4); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Kidri%C4%8Deva+ulica+20,+5000+Nova+Gorica,+Slovenia" onclick="focusLoc(4); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Nova Gorica:</strong> Kidričeva ulica 20</span>
         </a>
         <p class="ktx" id="lokKzDesc" style="font-family:'EB Garamond',serif; font-size:1.1rem; color:rgba(255,248,220,0.8); line-height:1.5; margin-top:15px; text-align:justify;">
@@ -943,8 +930,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
       <div class="ks" id="lokPlanikaS" style="display:none;">Trgovina Kobarid</div>
       <div class="kd"></div>
       <div class="ki">
-        <a href="https://maps.google.com/?q=Planika+Trg+svobode+1a,+Kobarid" onclick="focusLoc(5); return false;" class="lok-item">
-          <span class="lok-pin">📍</span> <span>Trg svobode 1a, Kobarid</span>
+        <a href="https://maps.google.com/?q=Gregor%C4%8Di%C4%8Deva+ulica+32,+5222+Kobarid,+Slovenia" onclick="focusLoc(5); return false;" class="lok-item">
+          <span class="lok-pin">📍</span> <span>Gregorčičeva ul. 32, Kobarid</span>
         </a>
         <p class="ktx" id="lokPlanikaDesc" style="font-family:'EB Garamond',serif; font-size:1.15rem; color:rgba(255,248,220,0.85); line-height:1.6; margin-top:15px; text-align:justify;">
           Naše pijače lahko kupite v trgovini Mlekarne Planika v Kobaridu, kjer ponujajo vrhunske lokalne posoške dobrote.
@@ -958,10 +945,10 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
       <div class="ks" id="lokFamaS" style="display:none;">Soča & Trenta</div>
       <div class="kd"></div>
       <div class="ki" style="display: flex; flex-direction: column; gap: 4px;">
-        <a href="https://maps.google.com/?q=Trgovina+in+bar+Soča" onclick="focusLoc(6); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=So%C4%8Da+24b,+5232+So%C4%8Da,+Slovenia" onclick="focusLoc(6); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Soča:</strong> Soča 24b</span>
         </a>
-        <a href="https://maps.google.com/?q=Trgovina+Trenta" onclick="focusLoc(7); return false;" class="lok-item">
+        <a href="https://maps.google.com/?q=Trenta+29a,+5232+So%C4%8Da,+Slovenia" onclick="focusLoc(7); return false;" class="lok-item">
           <span class="lok-pin">📍</span> <span><strong>Trenta:</strong> Trenta 29a</span>
         </a>
         <p class="ktx" id="lokFamaDesc" style="font-family:'EB Garamond',serif; font-size:1.15rem; color:rgba(255,248,220,0.85); line-height:1.6; margin-top:15px; text-align:justify;">
@@ -1042,7 +1029,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 var I = {
   sl:{nav:["Domov","Ponudba","O nas","Trgovine","Kontakt"],hero_sub:"Tolminska Dežela · Est. 1816",hero_title:"Žganje<br>Valter&#8209;Siber",hero_tagline:"Tradicija · Narava · Mojstrstvo",hero_motto:"<em>Prava mera</em> – življenska modrost.<br><em>Srk ob pravem času</em> – zdravje in krepost.",hero_cta:"Razišči ponudbo →",hero_cta_quick:"Hitro povpraševanje",pon_title:"Naša Ponudba",pon_sub:"Klikni na flašo za opis",fils:["Vse","Žganja","Sladko","Grenko"],cat_titles:["Žganja","Sladki Likerji","Grenčice & Grenki Likerji"],on_title:"Domačija Valter-Siber",on_sub:"Tolminska Dežela · Od leta 1816",on_acc_t1:"Zgodba o Domačiji in Žganjekuhi",on_acc_c1:"Siberji živijo v Poljubinju že od leta 1816. Vseskozi so bili gostilničarji in vestni gospodarji. Valter se na svoji domačiji že dobrih 25 let ukvarja z žganjekuho.<br><br>\"Prava mera - življenjska modrost, srk ob pravem času - zdravje in krepost\" je rek, ki ga Valter ponudi v presojo obiskovalcem. Žganje, ki ga pridela, je narejeno iz kakovostnega sadja in zelišč. Na številnih strokovnih sejmih so zeliščni likerji dobili najvišje ocene. Valter rad poudari, da sta najbrž najboljša produkta, ki ju je sam ustvaril, smrekov zeliščni liker Rivé in Medvedova kri. Ponosen je seveda tudi na druge likerje in žganja.<br><br>Za dobro domače žganje si je treba vzeti čas. Treba je biti skrben. Dobrega žganja ni brez dobrega in čistega sadja. In ga ni brez pazljivosti pri kuhi in pri stekleničenju. Vsi ti postopki, od izbire sadja, zelišč, do stekleničenja in etiketiranja, ki pri Valterju poteka ročno, vzamejo veliko časa.<br><br>\"In ko se kupci, gostje, tujci k nam vračajo, je ves trud, ki ga vložiš v to težko delo poplačan\", pravi Valter.",on_acc_t2:"Tolminska Dežela in reka Soča",on_acc_c2:"Tolminska dežela ob reki Soči, dolini Idrijce in Baški grapi obiskovalce pozdravi s čudovitimi odtenki zelene barve in jih napolni z energijo. Bistre vode, hribi, gore in kulturna dediščina pa ustvarjajo nepozabna doživetja v tem delu Slovenije. Pisatelj Ivan Pregelj je Tolmince opisal kot junake, ki so se borili proti nepravičnim vladarjem. Še danes v njih živi duh uporništva.<br><br>Dobrodošli!<br><br><strong>Valter</strong>",on_motto:"Živimo za kvaliteto",ko_title:"Obiščite nas",ko_sub:"Domačija Valter-Siber · Tolmin",sest:"Sestavine",zapri:"✕ Zapri",age_title:"Dobrodošli v svet Valter-Siber",age_sub:"Ta spletna stran vsebuje informacije o alkoholnih pijačah.<br>Za vstop morate biti stari <strong>18 let ali več</strong>.",age_yes:"Da, star/a sem 18+",age_no:"Nisem še polnoleten/a",age_warn:"Prekomerno pitje alkohola škoduje zdravju",age_denied:"Dostop zavrnjen. Za vstop morate biti polnoletni.",award:"Nagrajeno",povpr:"Pošlji povpraševanje",email_reveal:"Prikaži e-pošto",seo_title:"Žganje Valter-Siber | Tolminska Dežela",seo_desc:"Domače žganje in vrhunski zeliščni likerji Valter-Siber iz Tolminske Dežele. Ročna izdelava z zavezanostjo h kakovosti po tradiciji od leta 1816.",lok_title:"Kje kupiti",lok_domacija_t:"Domačija Valter-Siber",lok_domacija_s:"Poljubinj · Tolmin",lok_domacija_desc:"Neposredni nakup in degustacija na domačiji. Za degustacije in večje skupine je priporočljiva predhodna najava.",lok_kz_t:"Kmetijska zadruga Tolmin",lok_kz_s:"Prodajalne Zadrugarka",lok_kz_desc:"Naši izdelke so na voljo v večjih poslovalnicah Zadrugarka na območju Posočja in Primorske.",lok_planika_t:"Mlekarna Planika",lok_planika_s:"Trgovina Kobarid",lok_planika_desc:"Naše pijače lahko kupite v trgovini Mlekarne Planika v Kobaridu, kjer ponujajo vrhunske lokalne posoške dobrote.",lok_fama_t:"Trgovine Fama",lok_fama_s:"Soča & Trenta",lok_fama_desc:"Naše izdelke lahko kupite tudi v lokalnih trgovinah Fama v Soči in Trenti, priročnih točkah sredi neokrnjene narave.",lok_map_btn:"Prikaži vse lokacije na zemljevidu doline Soče →"},
@@ -1604,6 +1590,11 @@ function sp(id,lnk){
   if (id !== 'onas' && id !== 'lokacije' && scrollTopBtn) {
     scrollTopBtn.classList.remove('show');
   }
+  if (id === 'lokacije' && typeof map !== 'undefined' && map) {
+    setTimeout(function() {
+      map.invalidateSize();
+    }, 120);
+  }
 }
 function enterSite(){
   localStorage.setItem('age_verified', 'true');
@@ -1998,78 +1989,25 @@ if (localStorage.getItem('age_verified') === 'true') {
   if (a) a.style.display = 'none';
 }
 
-// Leaflet Map Initialization
-var map = L.map('lokMap', {
-  scrollWheelZoom: true,
-  dragging: true
-}).setView([46.1828, 13.7314], 10);
-
-L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-  attribution: 'Map data &copy; Google'
-}).addTo(map);
-
-var goldIcon = L.divIcon({
-  className: 'custom-gold-marker',
-  html: '<svg width="28" height="36" viewBox="0 0 28 36" style="display:block; filter: drop-shadow(0px 3px 4px rgba(0,0,0,0.5));"><path d="M14 0 C6.27 0 0 6.27 0 14 C0 24.5 14 36 14 36 C14 36 28 24.5 28 14 C28 6.27 21.73 0 14 0 Z" fill="#d4af37" stroke="#ffffff" stroke-width="2"/><circle cx="14" cy="14" r="5" fill="#000000"/></svg>',
-  iconSize: [28, 36],
-  iconAnchor: [14, 36],
-  popupAnchor: [0, -36]
-});
-
-var mapLocs = [
-  {key: "lok_domacija_t", branch: "", coords: [46.18043, 13.75136], link: "https://maps.google.com/?q=Poljubinj+66A,+5220+Tolmin"},
-  {key: "lok_kz_t", branch: " (Tolmin)", coords: [46.18735, 13.73379], link: "https://maps.google.com/?q=Zadrugarka+Rutarjeva+ul.+35,+Tolmin"},
-  {key: "lok_kz_t", branch: " (Kanal ob Soči)", coords: [46.08588, 13.63584], link: "https://maps.google.com/?q=Zadrugarka+Gradnikova+ul.+13A,+Kanal"},
-  {key: "lok_kz_t", branch: " (Bovec)", coords: [46.33775, 13.55182], link: "https://maps.google.com/?q=Zadrugarka+Trg+golobarskih+zrtev+49,+Bovec"},
-  {key: "lok_kz_t", branch: " (Nova Gorica)", coords: [45.9592, 13.6487], link: "https://maps.google.com/?q=Zadruga+Tolmin+Kidriceva+ulica+20,+Nova+Gorica"},
-  {key: "lok_planika_t", branch: " (Kobarid)", coords: [46.24808, 13.57835], link: "https://maps.google.com/?q=Planika+Kobarid,+Gregorcicjeva+21"},
-  {key: "lok_fama_t", branch: " (Soča)", coords: [46.34219, 13.66639], link: "https://maps.google.com/?q=Trgovina+in+bar+Soca"},
-  {key: "lok_fama_t", branch: " (Trenta)", coords: [46.38115, 13.75123], link: "https://maps.google.com/?q=Trgovina+Trenta"}
+// Dynamic Google Maps Iframe Focus
+var mapLocQueries = [
+  'Poljubinj 66A, 5220 Tolmin, Slovenia',
+  'Rutarjeva ulica 35, 5220 Tolmin, Slovenia',
+  'Gradnikova ulica 13A, 5213 Kanal, Slovenia',
+  'Trg golobarskih žrtev 49, 5230 Bovec, Slovenia',
+  'Kidričeva ulica 20, 5000 Nova Gorica, Slovenia',
+  'Gregorčičeva ulica 32, 5222 Kobarid, Slovenia',
+  'Soča 24b, 5232 Soča, Slovenia',
+  'Trenta 29a, 5232 Soča, Slovenia'
 ];
 
-var markers = [];
-mapLocs.forEach(function(loc) {
-  var m = L.marker(loc.coords, {icon: goldIcon}).addTo(map);
-  m.locData = loc;
-  m.on('click', function(e) {
-    map.setView(e.target.getLatLng(), 15);
-  });
-  markers.push(m);
-});
-
-updateMapPopups(userLang);
-
-function updateMapPopups(l) {
-  var linkText = "Odpri Google Maps / Street View →";
-  if (l === 'en') linkText = "Open Google Maps / Street View →";
-  else if (l === 'de') linkText = "Google Maps / View öffnen →";
-  else if (l === 'it') linkText = "Apri Google Maps / Street View →";
-
-  markers.forEach(function(m) {
-    var loc = m.locData;
-    var baseName = I[l][loc.key] || loc.key;
-    var branch = loc.branch;
-    if (l === 'en') {
-      branch = branch.replace("Kanal ob Soči", "Kanal");
-    } else if (l === 'de') {
-      branch = branch.replace("Kanal ob Soči", "Kanal");
-    } else if (l === 'it') {
-      branch = branch.replace("Kanal ob Soči", "Kanal");
-    }
-    
-    var popupContent = '<div style="font-family:\'EB Garamond\', serif; font-size:0.85rem; color:#333; padding:6px; text-align:center;">' +
-      '<strong style="color:#a8840c; font-family:\'Cinzel\', serif; font-size:0.8rem; display:block; margin-bottom:8px;">' + baseName + branch + '</strong>' +
-      '<a href="' + loc.link + '" target="_blank" style="display:inline-block; margin-top:6px; color:#0066cc; text-decoration:underline; font-weight:bold; font-size:0.75rem;">' + linkText + '</a>' +
-      '</div>';
-    m.bindPopup(popupContent);
-  });
-}
-
 function focusLoc(idx) {
-  var loc = mapLocs[idx];
-  if (!loc) return;
-  map.setView(loc.coords, 15);
-  markers[idx].openPopup();
-  document.getElementById('lokMapContainer').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  var query = mapLocQueries[idx];
+  if (!query) return;
+  var iframe = document.getElementById('lokMapIframe');
+  if (iframe) {
+    iframe.src = 'https://maps.google.com/maps?q=' + encodeURIComponent(query) + '&t=&z=14&ie=UTF8&iwloc=&output=embed';
+    document.getElementById('lokMapContainer').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
 </script></body></html>
