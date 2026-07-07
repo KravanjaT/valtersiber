@@ -231,10 +231,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 @media(max-width:900px){
   :root{--nav:52px}
   nav{display:contents}
-  .nl{position:fixed;top:calc(10px + var(--sat));left:50%;transform:translateX(-50%);z-index:1000;background:rgba(6,4,2,.78);border:1px solid rgba(212,175,55,.35);border-radius:50%;padding:5px;backdrop-filter:blur(10px);box-shadow:0 4px 14px rgba(0,0,0,.55);line-height:0;font-size:0}
-  .nl img{height:34px;width:34px;border-radius:50%;border:none;display:block;transition:height .35s ease,width .35s ease}
-  body:has(#pg-home.on) .nl{border-color:rgba(212,175,55,.5);box-shadow:0 0 20px rgba(212,175,55,.3),0 4px 18px rgba(0,0,0,.65)}
-  body:has(#pg-home.on) .nl img{height:60px;width:60px}
+  .nl{position:fixed;top:calc(12px + var(--sat));left:50%;transform:translateX(-50%);z-index:1000;line-height:0;font-size:0}
+  .nl img{height:64px;width:64px;border:none;display:block;filter:drop-shadow(0 4px 14px rgba(0,0,0,.65))}
   .nv{position:fixed;bottom:calc(16px + var(--sab));left:16px;right:16px;height:54px;background:rgba(4,2,1,.95);border:1px solid rgba(212,175,55,.2);border-radius:16px;backdrop-filter:blur(20px);box-shadow:inset 0 0 8px rgba(212,175,55,0.1), 0 8px 32px rgba(0,0,0,0.7), 0 0 12px rgba(212,175,55,0.05);display:flex;justify-content:space-around;align-items:center;z-index:1000;padding:0 8px}
   .nv a{display:flex;align-items:center;justify-content:center;height:38px;padding:0 12px;border-radius:10px;color:rgba(255,255,255,.55);text-decoration:none;transition:all .25s ease;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
   .nv a .nt{display:inline-block;max-width:none;opacity:1;margin-left:0}
@@ -247,8 +245,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   .lb.on{opacity:1;transform:scale(1.1)}
   .lb span{display:none !important}
   .pg{padding-bottom:calc(90px + var(--sab));justify-content:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-top:calc(var(--nav) + var(--sat) + 14px)}
-  body.nav-hidden .lsw{display:none !important}
-  body.nav-hidden .pg, body.nav-hidden #pg-ponudba{padding-top:calc(var(--sat) + 56px + 3vh) !important}
+  body.nav-hidden .nl, body.nav-hidden .lsw{display:none !important}
+  body.nav-hidden .pg, body.nav-hidden #pg-ponudba{padding-top:calc(var(--sat) + 20px) !important}
   #pg-ponudba{padding-bottom:calc(76px + var(--sab)) !important}
   .ph{margin-top:0 !important;padding:8px 1rem 2px !important;gap:4px !important}
   .ph #qBtn{margin-top:2px !important;margin-bottom:2px !important;padding:5px 12px !important}
