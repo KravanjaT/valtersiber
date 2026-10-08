@@ -196,7 +196,7 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#d4af37;--gl:#f0d060;--dk:#060402;--nav:70px;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
-html,body{width:100%;height:100%;overflow:hidden;background:var(--dk);font-family:'Cinzel',serif;color:#fff}
+html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior-x:none;background:var(--dk);font-family:'Cinzel',serif;color:#fff}
 body{cursor:auto}
 body::before {
   content: '';
@@ -228,6 +228,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .lb span{display:none}
 .lb:hover{opacity:1;border-color:rgba(212,175,55,.6);background:rgba(212,175,55,.1);transform:scale(1.06)}
 .lb.on{opacity:1;border-color:var(--gold);background:rgba(212,175,55,.2);box-shadow:0 0 8px rgba(212,175,55,.3);color:var(--gold)}
+/* Preserve each national flag's real proportions instead of squeezing it into one shape. */
+.lb svg{width:24px!important;height:auto!important;flex:0 0 auto}
 @media(max-width:900px){
   :root{--nav:52px}
   nav{display:contents}
@@ -241,7 +243,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   .lsw{display:none !important}
   .lsw-hero{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:16px;background:rgba(6,4,2,0.7);border:1px solid rgba(212,175,55,0.24);border-radius:14px;padding:8px 16px;backdrop-filter:blur(12px);opacity:0;animation:fu 1s ease 1.5s forwards}
   .lb{padding:4px !important;background:none !important;border:none !important;opacity:0.4;transition:opacity 0.2s, transform 0.2s;box-shadow:none !important;display:inline-flex;align-items:center;justify-content:center}
-  .lb svg{width:28px !important;height:20px !important}
+  .lb svg{width:28px !important;height:auto !important}
   .lb.on{opacity:1;transform:scale(1.1)}
   .lb span{display:none !important}
   .pg{padding-bottom:calc(90px + var(--sab));justify-content:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-top:calc(var(--nav) + var(--sat) + 14px)}
@@ -269,7 +271,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   .nv a{font-size:.68rem;letter-spacing:.12em;padding:0 10px}
   .lsw{padding-left:10px;gap:3px}
   .lsw .lb{padding:4px 6px !important}
-  .lsw .lb svg{width:20px !important;height:14px !important}
+  .lsw .lb svg{width:20px !important;height:auto !important}
   #pg-ponudba{padding-top:calc(58px + var(--sat) + 8px) !important}
   .ph{margin-top:10px !important;padding:6px 1rem 2px !important;gap:4px !important}
   .ph-t{font-size:1.5rem !important}
@@ -444,13 +446,13 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .agsep{display:none}
 
 /* HEADER FLAGS SIZE INCREASE */
-.lsw .lb svg{width:24px !important;height:17px !important}
+.lsw .lb svg{width:24px !important;height:auto !important}
 .lsw .lb{padding:6px 10px !important}
 
 /* AGE GATE LANGUAGE BUTTONS (ENTRY PAGE) */
 #ag .lb{padding:10px 18px !important;font-size:0.85rem !important;font-weight:700 !important;border-radius:8px !important;background:rgba(255,255,255,0.05) !important;border:1px solid rgba(212,175,55,0.22) !important;color:#fff !important;opacity:0.6;gap:8px;display:inline-flex !important;align-items:center;justify-content:center;transition:all 0.25s ease;box-shadow:none !important}
 #ag .lb.on{opacity:1;border-color:var(--gold) !important;background:rgba(212,175,55,0.15) !important;box-shadow:0 0 12px rgba(212,175,55,0.35) !important;color:var(--gold) !important}
-#ag .lb svg{width:28px !important;height:20px !important}
+#ag .lb svg{width:28px !important;height:auto !important}
 #ag .lb span{display:inline-flex !important;font-size:0.85rem !important;line-height:1 !important;margin-left:4px;font-family:'Cinzel',serif}
 .agdiv{width:64px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent)}
 .agtt{font-family:'Cinzel Decorative',serif;font-size:clamp(1.05rem,3.2vw,1.8rem);color:var(--gold);letter-spacing:.07em;text-shadow:0 0 20px rgba(212,175,55,.4);line-height:1.3}
@@ -798,7 +800,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 }
 
 /* Horizontal catalogue and calmer touch controls */
-#pg-ponudba{min-height:0}
+#pg-ponudba{min-height:0;overflow-x:hidden!important;overscroll-behavior-x:none}
 #pg-ponudba .ph{width:100%}
 #pg-ponudba .co{display:flex;align-items:center;justify-content:center;min-height:0;overflow:hidden;flex:1;width:100%;padding:12px 0 32px;mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent)}
 #pg-ponudba .ct{display:flex;flex:0 0 max-content;flex-wrap:nowrap;width:max-content;max-width:none;margin:0;align-items:center;justify-content:flex-start;gap:clamp(10px,2vw,32px);padding:26px 0;will-change:transform;cursor:grab;user-select:none}
@@ -851,12 +853,23 @@ button:focus:not(:focus-visible),a:focus:not(:focus-visible),[role="button"]:foc
   .nv a{font-size:.58rem;letter-spacing:.04em;padding:0 7px;height:42px}
   #scrollTopBtn{bottom:calc(76px + var(--sab))}
 }
+
+/* Keep touch navigation vertical on the store page; the map remains independently draggable. */
+#pg-lokacije{overflow-x:hidden!important;overscroll-behavior-x:none}
+#pg-lokacije .kw,#pg-lokacije .kc{min-width:0}
+#pg-ponudba .co{overscroll-behavior-x:contain;touch-action:pan-y}
+#pg-ponudba .ct{touch-action:pan-y}
+@media(max-width:900px){
+  #pg-lokacije{touch-action:pan-y}
+  #pg-lokacije .kw{max-width:100%;box-sizing:border-box}
+  .lb svg{width:28px!important;height:auto!important}
+}
 /* Clean, consistent offer layout across screen sizes */
 nav .lsw{gap:12px;margin-left:10px;padding:0 0 0 14px;border-left:1px solid rgba(240,220,165,.18);background:transparent}
 nav .lsw .lb{width:auto;height:auto;padding:5px 2px!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;opacity:.62;transform:none;transition:opacity .2s,transform .2s}
 nav .lsw .lb:hover{background:transparent!important;border:0!important;opacity:1;transform:translateY(-2px)}
 nav .lsw .lb.on{background:transparent!important;border:0!important;box-shadow:none!important;opacity:1;transform:translateY(-1px)}
-nav .lsw .lb svg{width:24px!important;height:17px!important;border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,.45);transition:filter .2s ease}
+nav .lsw .lb svg{width:24px!important;height:auto!important;border-radius:2px;box-shadow:0 1px 4px rgba(0,0,0,.45);transition:filter .2s ease}
 nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.36))}
 .lsw-hero{background:transparent;border:0;border-radius:0;padding:4px 0;backdrop-filter:none;box-shadow:none}
 .lsw-hero .lb.on{transform:scale(1.07);box-shadow:none!important}
@@ -953,7 +966,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
 #ag .lb{width:auto!important;padding:5px 3px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(255,255,255,.7)!important;opacity:.62;gap:6px;transform:none}
 #ag .lb:hover{opacity:1;transform:translateY(-2px)}
 #ag .lb.on{opacity:1;border:0!important;background:transparent!important;box-shadow:none!important;color:var(--gold)!important;transform:translateY(-1px)}
-#ag .lb svg{width:27px!important;height:19px!important;border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.45)}
+#ag .lb svg{width:27px!important;height:auto!important;border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.45)}
 #ag .lb span{font-size:.58rem!important;letter-spacing:.08em;margin-left:3px;color:inherit}
 #ag .agtt{text-shadow:0 0 16px rgba(212,175,55,.28)}
 #ag .agyes{letter-spacing:.18em;background:rgba(212,175,55,.06);border-color:rgba(212,175,55,.4)}
@@ -998,19 +1011,19 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
   </div>
   <div class="lsw">
     <button class="lb on" id="bSL" onclick="setLang('sl')" title="Slovenščina">
-      <svg width="20" height="14" viewBox="0 0 20 14" style="display:block"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#003da5"/><rect y="9.33" width="20" height="4.67" fill="#e4002b"/><g transform="translate(4.5, 4.2) scale(0.65)"><path d="M-2.5,-3.2 L2.5,-3.2 L2.5,0.5 C2.5,2.1 1.3,3.3 0,4 C-1.3,3.3 -2.5,2.1 -2.5,0.5 Z" fill="#003da5" stroke="#fff" stroke-width="0.6" stroke-linejoin="round"/><path d="M-2.5,0.5 C-2.5,2.1 -1.3,3.3 0,4 C1.3,3.3 2.5,2.1 2.5,0.5" fill="none" stroke="#e4002b" stroke-width="0.6" stroke-linecap="round"/><polygon points="-1.6,1.2 0,-0.8 1.6,1.2" fill="#fff"/><polygon points="-1.5,1.2 -0.8,0.2 0,1.2" fill="#fff"/><polygon points="0,1.2 0.8,0.2 1.5,1.2" fill="#fff"/><path d="M-1.2,1.8 Q-0.6,1.4 0,1.8 Q0.6,2.2 1.2,1.8" fill="none" stroke="#fff" stroke-width="0.3"/><path d="M-1.2,2.4 Q-0.6,2.0 0,2.4 Q0.6,2.8 1.2,2.4" fill="none" stroke="#fff" stroke-width="0.3"/><circle cx="0" cy="-2.0" r="0.35" fill="#ffcc00"/><circle cx="-0.8" cy="-1.1" r="0.35" fill="#ffcc00"/><circle cx="0.8" cy="-1.1" r="0.35" fill="#ffcc00"/></g></svg>
+      <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#fff"/><rect y="6.667" width="40" height="6.666" fill="#005DA4"/><rect y="13.333" width="40" height="6.667" fill="#ED1C24"/><path d="M7.2 1.35h8.1v7.2c0 3.6-1.8 6.1-4.05 7.3-2.25-1.2-4.05-3.7-4.05-7.3z" fill="#005DA4" stroke="#fff" stroke-width=".65" stroke-linejoin="round"/><path d="m7.8 9.1 2.15-3.25 1.3 1.55 1.75-2.55 2.15 4.15z" fill="#fff"/><path d="M8.55 11.05q2.7-1.1 5.4 0M9.1 12.1q2.15-.85 4.3 0" fill="none" stroke="#fff" stroke-width=".48" stroke-linecap="round"/><path d="m8.45 3.1.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8zm2.2-.72.43-1 .43 1 1.04.04-.83.67.29.98-.93-.57-.92.57.28-.98-.82-.67zm2.2.72.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8z" fill="#FFCC00"/></svg>
       <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">SL</span>
     </button>
     <button class="lb" id="bEN" onclick="setLang('en')" title="English">
-      <svg width="20" height="14" viewBox="0 0 60 40" style="display:block"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/></svg>
+      <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#012169"/><path d="M0 0 40 20M40 0 0 20" stroke="#fff" stroke-width="4"/><path d="M0 0 40 20M40 0 0 20" stroke="#C8102E" stroke-width="1.8"/><path d="M20 0v20M0 10h40" stroke="#fff" stroke-width="6"/><path d="M20 0v20M0 10h40" stroke="#C8102E" stroke-width="3.2"/></svg>
       <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">EN</span>
     </button>
     <button class="lb" id="bDE" onclick="setLang('de')" title="Deutsch">
-      <svg width="20" height="14" viewBox="0 0 5 3" style="display:block"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>
+      <svg width="30" height="18" viewBox="0 0 30 18" style="display:block" aria-hidden="true"><rect width="30" height="6" fill="#000"/><rect y="6" width="30" height="6" fill="#DD0000"/><rect y="12" width="30" height="6" fill="#FFCE00"/></svg>
       <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">DE</span>
     </button>
     <button class="lb" id="bIT" onclick="setLang('it')" title="Italiano">
-      <svg width="20" height="14" viewBox="0 0 3 2" style="display:block"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#F1F2F1"/><rect x="2" width="1" height="2" fill="#D12030"/></svg>
+      <svg width="30" height="20" viewBox="0 0 30 20" style="display:block" aria-hidden="true"><rect width="10" height="20" fill="#009246"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE2B37"/></svg>
       <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">IT</span>
     </button>
   </div>
@@ -1033,16 +1046,16 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
       </div>
       <div class="lsw-hero" id="lswHero">
         <button class="lb on" id="hSL" onclick="setLang('sl')" title="Slovenščina">
-          <svg width="20" height="14" viewBox="0 0 20 14" style="display:block"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#003da5"/><rect y="9.33" width="20" height="4.67" fill="#e4002b"/><g transform="translate(4.5, 4.2) scale(0.65)"><path d="M-2.5,-3.2 L2.5,-3.2 L2.5,0.5 C2.5,2.1 1.3,3.3 0,4 C-1.3,3.3 -2.5,2.1 -2.5,0.5 Z" fill="#003da5" stroke="#fff" stroke-width="0.6" stroke-linejoin="round"/><path d="M-2.5,0.5 C-2.5,2.1 -1.3,3.3 0,4 C1.3,3.3 2.5,2.1 2.5,0.5" fill="none" stroke="#e4002b" stroke-width="0.6" stroke-linecap="round"/><polygon points="-1.6,1.2 0,-0.8 1.6,1.2" fill="#fff"/><polygon points="-1.5,1.2 -0.8,0.2 0,1.2" fill="#fff"/><polygon points="0,1.2 0.8,0.2 1.5,1.2" fill="#fff"/><path d="M-1.2,1.8 Q-0.6,1.4 0,1.8 Q0.6,2.2 1.2,1.8" fill="none" stroke="#fff" stroke-width="0.3"/><path d="M-1.2,2.4 Q-0.6,2.0 0,2.4 Q0.6,2.8 1.2,2.4" fill="none" stroke="#fff" stroke-width="0.3"/><circle cx="0" cy="-2.0" r="0.35" fill="#ffcc00"/><circle cx="-0.8" cy="-1.1" r="0.35" fill="#ffcc00"/><circle cx="0.8" cy="-1.1" r="0.35" fill="#ffcc00"/></g></svg>
+          <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#fff"/><rect y="6.667" width="40" height="6.666" fill="#005DA4"/><rect y="13.333" width="40" height="6.667" fill="#ED1C24"/><path d="M7.2 1.35h8.1v7.2c0 3.6-1.8 6.1-4.05 7.3-2.25-1.2-4.05-3.7-4.05-7.3z" fill="#005DA4" stroke="#fff" stroke-width=".65" stroke-linejoin="round"/><path d="m7.8 9.1 2.15-3.25 1.3 1.55 1.75-2.55 2.15 4.15z" fill="#fff"/><path d="M8.55 11.05q2.7-1.1 5.4 0M9.1 12.1q2.15-.85 4.3 0" fill="none" stroke="#fff" stroke-width=".48" stroke-linecap="round"/><path d="m8.45 3.1.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8zm2.2-.72.43-1 .43 1 1.04.04-.83.67.29.98-.93-.57-.92.57.28-.98-.82-.67zm2.2.72.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8z" fill="#FFCC00"/></svg>
         </button>
         <button class="lb" id="hEN" onclick="setLang('en')" title="English">
-          <svg width="20" height="14" viewBox="0 0 60 40" style="display:block"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/></svg>
+          <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#012169"/><path d="M0 0 40 20M40 0 0 20" stroke="#fff" stroke-width="4"/><path d="M0 0 40 20M40 0 0 20" stroke="#C8102E" stroke-width="1.8"/><path d="M20 0v20M0 10h40" stroke="#fff" stroke-width="6"/><path d="M20 0v20M0 10h40" stroke="#C8102E" stroke-width="3.2"/></svg>
         </button>
         <button class="lb" id="hDE" onclick="setLang('de')" title="Deutsch">
-          <svg width="20" height="14" viewBox="0 0 5 3" style="display:block"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>
+          <svg width="30" height="18" viewBox="0 0 30 18" style="display:block" aria-hidden="true"><rect width="30" height="6" fill="#000"/><rect y="6" width="30" height="6" fill="#DD0000"/><rect y="12" width="30" height="6" fill="#FFCE00"/></svg>
         </button>
         <button class="lb" id="hIT" onclick="setLang('it')" title="Italiano">
-          <svg width="20" height="14" viewBox="0 0 3 2" style="display:block"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#F1F2F1"/><rect x="2" width="1" height="2" fill="#D12030"/></svg>
+          <svg width="30" height="20" viewBox="0 0 30 20" style="display:block" aria-hidden="true"><rect width="10" height="20" fill="#009246"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE2B37"/></svg>
         </button>
       </div>
     </div>
@@ -1218,19 +1231,19 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
       <span class="agll">Jezik / Language</span>
       <div class="agsep"></div>
       <button class="lb on" id="agSL" onclick="setLang('sl')">
-        <svg width="20" height="14" viewBox="0 0 20 14" style="display:block"><rect width="20" height="4.67" fill="#fff"/><rect y="4.67" width="20" height="4.67" fill="#003da5"/><rect y="9.33" width="20" height="4.67" fill="#e4002b"/><g transform="translate(4.5, 4.2) scale(0.65)"><path d="M-2.5,-3.2 L2.5,-3.2 L2.5,0.5 C2.5,2.1 1.3,3.3 0,4 C-1.3,3.3 -2.5,2.1 -2.5,0.5 Z" fill="#003da5" stroke="#fff" stroke-width="0.6" stroke-linejoin="round"/><path d="M-2.5,0.5 C-2.5,2.1 -1.3,3.3 0,4 C1.3,3.3 2.5,2.1 2.5,0.5" fill="none" stroke="#e4002b" stroke-width="0.6" stroke-linecap="round"/><polygon points="-1.6,1.2 0,-0.8 1.6,1.2" fill="#fff"/><polygon points="-1.5,1.2 -0.8,0.2 0,1.2" fill="#fff"/><polygon points="0,1.2 0.8,0.2 1.5,1.2" fill="#fff"/><path d="M-1.2,1.8 Q-0.6,1.4 0,1.8 Q0.6,2.2 1.2,1.8" fill="none" stroke="#fff" stroke-width="0.3"/><path d="M-1.2,2.4 Q-0.6,2.0 0,2.4 Q0.6,2.8 1.2,2.4" fill="none" stroke="#fff" stroke-width="0.3"/><circle cx="0" cy="-2.0" r="0.35" fill="#ffcc00"/><circle cx="-0.8" cy="-1.1" r="0.35" fill="#ffcc00"/><circle cx="0.8" cy="-1.1" r="0.35" fill="#ffcc00"/></g></svg>
+        <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#fff"/><rect y="6.667" width="40" height="6.666" fill="#005DA4"/><rect y="13.333" width="40" height="6.667" fill="#ED1C24"/><path d="M7.2 1.35h8.1v7.2c0 3.6-1.8 6.1-4.05 7.3-2.25-1.2-4.05-3.7-4.05-7.3z" fill="#005DA4" stroke="#fff" stroke-width=".65" stroke-linejoin="round"/><path d="m7.8 9.1 2.15-3.25 1.3 1.55 1.75-2.55 2.15 4.15z" fill="#fff"/><path d="M8.55 11.05q2.7-1.1 5.4 0M9.1 12.1q2.15-.85 4.3 0" fill="none" stroke="#fff" stroke-width=".48" stroke-linecap="round"/><path d="m8.45 3.1.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8zm2.2-.72.43-1 .43 1 1.04.04-.83.67.29.98-.93-.57-.92.57.28-.98-.82-.67zm2.2.72.52-1.2.52 1.2 1.25.05-1 .8.35 1.18-1.12-.68-1.1.68.34-1.18-1-.8z" fill="#FFCC00"/></svg>
         <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">SL</span>
       </button>
       <button class="lb" id="agEN" onclick="setLang('en')">
-        <svg width="20" height="14" viewBox="0 0 60 40" style="display:block"><rect width="60" height="40" fill="#012169"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V40 M0,20 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V40 M0,20 H60" stroke="#C8102E" stroke-width="6"/></svg>
+        <svg width="40" height="20" viewBox="0 0 40 20" style="display:block" aria-hidden="true"><rect width="40" height="20" fill="#012169"/><path d="M0 0 40 20M40 0 0 20" stroke="#fff" stroke-width="4"/><path d="M0 0 40 20M40 0 0 20" stroke="#C8102E" stroke-width="1.8"/><path d="M20 0v20M0 10h40" stroke="#fff" stroke-width="6"/><path d="M20 0v20M0 10h40" stroke="#C8102E" stroke-width="3.2"/></svg>
         <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">EN</span>
       </button>
       <button class="lb" id="agDE" onclick="setLang('de')">
-        <svg width="20" height="14" viewBox="0 0 5 3" style="display:block"><rect width="5" height="1" fill="#000"/><rect y="1" width="5" height="1" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg>
+        <svg width="30" height="18" viewBox="0 0 30 18" style="display:block" aria-hidden="true"><rect width="30" height="6" fill="#000"/><rect y="6" width="30" height="6" fill="#DD0000"/><rect y="12" width="30" height="6" fill="#FFCE00"/></svg>
         <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">DE</span>
       </button>
       <button class="lb" id="agIT" onclick="setLang('it')">
-        <svg width="20" height="14" viewBox="0 0 3 2" style="display:block"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#F1F2F1"/><rect x="2" width="1" height="2" fill="#D12030"/></svg>
+        <svg width="30" height="20" viewBox="0 0 30 20" style="display:block" aria-hidden="true"><rect width="10" height="20" fill="#009246"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE2B37"/></svg>
         <span style="font-size:.55rem;letter-spacing:.1em;font-family:'Cinzel',serif;margin-left:4px">IT</span>
       </button>
     </div>
@@ -1418,7 +1431,7 @@ function setLang(l){
 
 var track=document.getElementById('track');
 var activePage = 'home';
-var SW=0,pos=0,spd=0.16,boost=0,drag=false,wd=false,dsx=0,dsp=0,trackNeedScroll=true;
+var SW=0,pos=0,spd=0.11,drag=false,wd=false,dsx=0,dsp=0,trackNeedScroll=true;
 function rebuildCarousel(){
   track.innerHTML='';
   var filteredBtls = [];
@@ -1457,10 +1470,10 @@ function rebuildCarousel(){
   trackNeedScroll=shouldScroll;
 }
 var co=document.querySelector('.co');
-co.addEventListener('mousemove',function(e){var r=co.getBoundingClientRect();boost=((e.clientX-r.left)/r.width-.5)*.25;});
-co.addEventListener('mouseleave',function(){boost=0;});
 track.addEventListener('pointerdown',function(e){
   if(e.pointerType==='mouse'&&e.button!==0)return;
+  // A horizontal drag starts only on a bottle, never on the empty carousel area.
+  if(!e.target.closest('.bc'))return;
   wd=false;
   if(!trackNeedScroll)return;
   drag=true;dsx=e.clientX;dsp=pos;
@@ -1493,13 +1506,11 @@ var ma=document.getElementById('ma');
 var openedBtl = null;
 var productFrameTime=0;
 function animateProducts(time){
-  if(activePage==='ponudba'&&trackNeedScroll){
-    if(!drag&&SW){
-      pos+=spd+boost;
-      if(pos>=SW*2)pos-=SW;
-      if(pos<SW)pos+=SW;
-      track.style.transform='translateX(-'+pos.toFixed(2)+'px)';
-    }
+  if(activePage==='ponudba'&&trackNeedScroll&&!drag&&SW){
+    pos+=spd;
+    if(pos>=SW*2)pos-=SW;
+    if(pos<SW)pos+=SW;
+    track.style.transform='translateX(-'+pos.toFixed(2)+'px)';
   }
   productFrameTime=time;
   requestAnimationFrame(animateProducts);
@@ -1976,6 +1987,21 @@ if (window.matchMedia && window.matchMedia('(pointer: fine)').matches && !('onto
     if (c && !c.contains(e.target)) lockMap();
   }, { passive: true });
 }
+// Prevent sideways page swipes on touch screens. The offer still drags from bottles,
+// while the map keeps its own deliberate touch interaction inside its frame.
+var pageSwipeStart=null;
+document.addEventListener('touchstart',function(e){
+  if(!isT||e.touches.length!==1){pageSwipeStart=null;return;}
+  var t=e.touches[0];
+  pageSwipeStart={x:t.clientX,y:t.clientY};
+},{passive:true,capture:true});
+document.addEventListener('touchmove',function(e){
+  if(!isT||!pageSwipeStart||e.touches.length!==1||activePage==='home')return;
+  var target=e.target;
+  if(target.closest('#lokMapContainer')||target.closest('#track .bc'))return;
+  var t=e.touches[0],dx=t.clientX-pageSwipeStart.x,dy=t.clientY-pageSwipeStart.y;
+  if(Math.abs(dx)>Math.abs(dy)*1.1)e.preventDefault();
+},{passive:false,capture:true});
 // On phones and tablets, keep language choice on the entry screen and offer it again on Contact.
 var mobileLanguageRow = document.getElementById('lswHero');
 var contactLayout = document.querySelector('#pg-kontakt .kw');
