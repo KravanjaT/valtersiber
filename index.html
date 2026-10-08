@@ -1007,25 +1007,24 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
 /* Full-screen, responsive product details on phones and narrow tablets. */
 @media(max-width:768px){
   #ma{align-items:stretch;justify-content:center;padding:calc(16px + var(--sat)) clamp(18px,5vw,34px) calc(16px + var(--sab))}
-  #ma .ai{width:100%;height:auto;max-height:none;min-height:0;flex:1;flex-direction:column;justify-content:flex-start;padding:54px 0 12px;gap:clamp(12px,2.4dvh,22px);overflow-y:auto;overscroll-behavior:contain}
+  #ma .ai{width:100%;height:auto;max-height:none;min-height:0;flex:1;flex-direction:row;align-items:center;justify-content:flex-start;padding:54px 0 12px;gap:clamp(12px,3vw,22px);overflow-y:auto;overscroll-behavior:contain}
   #ma .ac{top:calc(12px + var(--sat));right:calc(14px + var(--sat));bottom:auto;left:auto;height:40px;padding:0 16px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,.4);border-radius:999px;background:rgba(4,2,1,.7);font-size:.6rem;letter-spacing:.14em}
-  #ma .abw{width:100%;max-height:none;gap:7px;flex:0 0 auto}
-  #ma .abimg{height:clamp(142px,23dvh,208px);max-height:208px;max-width:158px;width:auto}
-  #ma .an{font-size:clamp(1.3rem,5.3vw,1.85rem);line-height:1.12}
-  #ma .at{font-size:clamp(.58rem,2.3vw,.72rem);line-height:1.25;letter-spacing:.18em}
-  #ma .ainf{width:100%;min-height:0;flex:0 0 auto;align-items:center;gap:clamp(10px,2dvh,17px)}
-  #ma .aln{margin:0 auto}
-  #ma .ad{width:min(100%,600px);font-size:clamp(1rem,3.55vw,1.14rem);line-height:1.46}
+  #ma .abw{width:47%;max-height:none;gap:8px;flex:0 0 47%}
+  #ma .abimg{height:clamp(235px,36dvh,320px);max-height:320px;max-width:100%;width:100%;object-fit:contain}
+  #ma .an{font-size:clamp(1.08rem,4.2vw,1.55rem);line-height:1.12}
+  #ma .at{font-size:clamp(.55rem,2vw,.68rem);line-height:1.3;letter-spacing:.14em}
+  #ma .ainf{width:auto;min-width:0;min-height:0;flex:1 1 58%;align-items:flex-start;gap:clamp(9px,1.8dvh,15px);text-align:left}
+  #ma .aln{margin:0}
+  #ma .ad{width:100%;font-size:clamp(.95rem,3.3vw,1.1rem);line-height:1.43}
   #ma .ad-intro{margin-bottom:8px;line-height:1.45}
-  #ma .ad-notes{width:min(100%,600px);gap:8px;padding-top:11px;margin-top:9px}
-  #ma .ad-note-row{font-size:clamp(.91rem,3.2vw,1.02rem);line-height:1.38}
+  #ma .ad-notes{width:100%;gap:8px;padding-top:11px;margin-top:9px}
+  #ma .ad-note-row{font-size:clamp(.88rem,3vw,.98rem);line-height:1.38}
   #ma .ad-note-row strong{font-size:clamp(.68rem,2.5vw,.78rem);line-height:1.3;margin-right:5px}
-  #ma .aig{width:min(100%,600px);font-size:clamp(.94rem,3.2vw,1.04rem);line-height:1.42}
-  #ma .acta{align-self:center;margin-top:3px;padding:8px 0 6px;font-size:clamp(.66rem,2.5vw,.76rem)}
+  #ma .aig{width:100%;font-size:clamp(.9rem,3vw,1rem);line-height:1.42}
+  #ma .acta{align-self:flex-start;margin-top:3px;padding:8px 0 6px;font-size:clamp(.66rem,2.5vw,.76rem)}
 }
 @media(max-width:768px) and (max-height:700px){
-  #ma .ai{padding-top:48px;gap:clamp(9px,1.8dvh,14px)}
-  #ma .abimg{height:clamp(124px,20dvh,162px)}
+  #ma .ai{padding-top:48px;gap:clamp(8px,2.3vw,14px)}
   #ma .ainf{gap:clamp(8px,1.5dvh,12px)}
   #ma .ad{font-size:clamp(.96rem,3.4vw,1.08rem);line-height:1.4}
   #ma .ad-notes{gap:6px;padding-top:9px;margin-top:7px}
@@ -1036,7 +1035,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
   #ma{padding:calc(8px + var(--sat)) 22px calc(8px + var(--sab))}
   #ma .ai{flex-direction:row;align-items:center;justify-content:center;padding:38px 0 8px;gap:clamp(18px,4vw,44px);overflow-y:auto}
   #ma .abw{width:34%;flex:0 0 34%;gap:5px}
-  #ma .abimg{height:52dvh;max-height:230px;max-width:130px}
+  #ma .abimg{height:clamp(220px,55dvh,280px);max-height:280px;max-width:210px}
   #ma .an{font-size:clamp(1.05rem,3vw,1.45rem)}
   #ma .ainf{width:auto;flex:1;align-items:flex-start;gap:7px;text-align:left}
   #ma .aln{margin:0}
