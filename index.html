@@ -814,6 +814,8 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .hcta{min-height:46px;padding:14px 26px;letter-spacing:.2em}
 button,.pf-btn,.lok-item,.nv a{touch-action:manipulation}
 button:focus-visible,.nv a:focus-visible,.lok-item:focus-visible{outline:2px solid var(--gl);outline-offset:3px}
+button,a,[role="button"]{-webkit-tap-highlight-color:transparent}
+button:focus:not(:focus-visible),a:focus:not(:focus-visible),[role="button"]:focus:not(:focus-visible){outline:none;box-shadow:none}
 @media(min-width:901px){#pg-ponudba .co{max-height:calc(100vh - var(--nav) - 90px)}}
 @media(max-width:900px){#pg-ponudba .bi{height:clamp(160px,26vh,260px)!important}}
 @media(min-width:901px) and (max-width:1200px){#pg-ponudba .bi{height:clamp(170px,28vh,260px)!important}}
@@ -910,6 +912,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
 #pg-ponudba .bc.sel .bi{filter:drop-shadow(0 9px 20px rgba(0,0,0,.48))!important}
 #pg-ponudba .bi img{filter:brightness(.94) contrast(.95) saturate(.97)!important}
 #pg-ponudba .bc:hover .bi img,#pg-ponudba .bc:focus-visible .bi img,#pg-ponudba .bc.sel .bi img{filter:brightness(.98) contrast(.98) saturate(1)!important;transform:scale(1.015)}
+#pg-ponudba .ct{touch-action:pan-y}
 .abimg{filter:brightness(.94) contrast(.95) saturate(.97)!important}
 
 /* Quiet gold navigation and a shared, blurred homestead backdrop for inner pages */
@@ -943,6 +946,41 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
 @media(max-width:900px){
   #pg-ponudba::before{filter:blur(6px) brightness(.36) saturate(.78);opacity:1}
   #pg-ponudba .co{background:linear-gradient(180deg,transparent 0%,rgba(6,4,2,.2) 18%,rgba(6,4,2,.32) 82%,transparent 100%)}
+}
+/* Entry screen and language selection: quiet, matching the site navigation */
+#ag{background:linear-gradient(180deg,rgba(3,1,0,.72),rgba(3,1,0,.9)),url('hero.webp') 65% center/cover no-repeat}
+#ag .aglr{display:flex!important;grid-template-columns:none;width:auto;max-width:none;gap:clamp(16px,3vw,24px);margin:10px 0 16px}
+#ag .lb{width:auto!important;padding:5px 3px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;color:rgba(255,255,255,.7)!important;opacity:.62;gap:6px;transform:none}
+#ag .lb:hover{opacity:1;transform:translateY(-2px)}
+#ag .lb.on{opacity:1;border:0!important;background:transparent!important;box-shadow:none!important;color:var(--gold)!important;transform:translateY(-1px)}
+#ag .lb svg{width:27px!important;height:19px!important;border-radius:2px;box-shadow:0 1px 5px rgba(0,0,0,.45)}
+#ag .lb span{font-size:.58rem!important;letter-spacing:.08em;margin-left:3px;color:inherit}
+#ag .agtt{text-shadow:0 0 16px rgba(212,175,55,.28)}
+#ag .agyes{letter-spacing:.18em;background:rgba(212,175,55,.06);border-color:rgba(212,175,55,.4)}
+#ag .agyes:hover,#ag .agyes:active{background:rgba(212,175,55,.13)}
+#ag .agno{font-size:.56rem;letter-spacing:.14em;color:rgba(255,255,255,.52)}
+#ag .agwrn{letter-spacing:.07em;text-transform:none;color:rgba(255,248,220,.72)}
+@media(max-width:900px){
+  #ag{padding:calc(18px + var(--sat)) 18px calc(20px + var(--sab))}
+  #ag .aglogo img{width:clamp(100px,20vw,150px)}
+  #ag .agb{gap:14px}
+}
+@media(max-width:600px){
+  #ag .aglr{gap:12px}
+  #ag .aglogo img{width:108px}
+  #ag .agtt{font-size:clamp(1.12rem,5.8vw,1.5rem)}
+  #ag .agsub{font-size:1rem;line-height:1.62}
+  #ag .agyes{width:min(82vw,320px);font-size:.62rem;padding:13px 8px}
+  #ag .agwrn{font-size:.64rem;line-height:1.45}
+}
+#pg-onas,#pg-kontakt{overflow-x:hidden;overscroll-behavior-x:none}
+@media(max-width:900px){
+  #pg-onas,#pg-kontakt{overflow-x:hidden!important;overscroll-behavior-x:none;touch-action:pan-y}
+  #pg-onas .ow-scroll,#pg-kontakt .kw{max-width:100%;overflow-x:hidden}
+  #pg-kontakt .kw{flex-direction:column;align-items:center;justify-content:flex-start;gap:18px;padding:0 18px calc(105px + var(--sab))}
+  #pg-kontakt .kc{width:100%;max-width:520px;min-width:0;flex:0 0 auto}
+  #pg-kontakt .mw{width:100%;max-width:520px;min-width:0;height:clamp(190px,32vh,300px);flex:0 0 auto}
+  #pg-kontakt .lsw-hero{margin:8px auto 0}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body>
@@ -1938,4 +1976,8 @@ if (window.matchMedia && window.matchMedia('(pointer: fine)').matches && !('onto
     if (c && !c.contains(e.target)) lockMap();
   }, { passive: true });
 }
+// On phones and tablets, keep language choice on the entry screen and offer it again on Contact.
+var mobileLanguageRow = document.getElementById('lswHero');
+var contactLayout = document.querySelector('#pg-kontakt .kw');
+if (mobileLanguageRow && contactLayout) contactLayout.appendChild(mobileLanguageRow);
 </script></body></html>
