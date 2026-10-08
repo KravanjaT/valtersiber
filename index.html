@@ -197,7 +197,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#d4af37;--gl:#f0d060;--dk:#060402;--nav:70px;--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px)}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--dk);font-family:'Cinzel',serif;color:#fff}
-body{cursor:pointer}
+body{cursor:auto}
 body::before {
   content: '';
   position: fixed;
@@ -249,7 +249,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   body.nav-hidden .pg, body.nav-hidden #pg-ponudba{padding-top:calc(var(--sat) + 20px) !important}
   #pg-ponudba{padding-bottom:calc(76px + var(--sab)) !important}
   .ph{margin-top:0 !important;padding:8px 1rem 2px !important;gap:4px !important}
-  .ph #qBtn{margin-top:2px !important;margin-bottom:2px !important;padding:5px 12px !important}
   .ph .p-fils{margin-top:4px !important;margin-bottom:2px !important;gap:4px !important}
   .ph .pon-divider{margin:4px auto 2px !important}
   .aglr{display:grid !important;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:280px;margin:8px auto 16px}
@@ -283,7 +282,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   #pg-ponudba{padding-top:calc(var(--nav) + 6px) !important;padding-bottom:calc(var(--sab) + 6px) !important}
   .ph{margin-top:6px !important;padding:4px 1rem 2px !important;gap:3px !important}
   .ph-t{font-size:clamp(1.15rem, 2.2vw, 1.6rem) !important}
-  .ph #qBtn{margin-top:2px !important;margin-bottom:2px !important;padding:4px 12px !important;font-size:.6rem !important}
   .p-fils{margin-top:4px !important;margin-bottom:2px !important;gap:4px !important}
   .pf-btn{padding:4px 12px !important;font-size:.6rem !important}
   .bi{height:clamp(160px, 27vh, 240px) !important}
@@ -304,7 +302,7 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 #pg-home{padding:0;overflow:hidden}
 .hbg{position:absolute;top:-10%;left:-8%;right:-8%;bottom:-10%;background-size:cover;background-position:65% center;background-repeat:no-repeat;will-change:transform}
 .hov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to right,rgba(4,2,1,.82) 0%,rgba(4,2,1,.55) 28%,rgba(4,2,1,.18) 52%,transparent 70%),linear-gradient(to bottom,rgba(4,2,1,.3) 0%,transparent 18%,transparent 70%,rgba(4,2,1,.65) 87%,rgba(4,2,1,.9) 100%)}
-@media(max-width:600px){.hov{background:rgba(4,2,1,.48),linear-gradient(to bottom,rgba(4,2,1,.6) 0%,rgba(4,2,1,.15) 25%,rgba(4,2,1,.15) 60%,rgba(4,2,1,.8) 85%,rgba(4,2,1,.95) 100%)}}
+@media(max-width:600px){.hov{background:linear-gradient(to bottom,rgba(4,2,1,.28) 0%,rgba(4,2,1,.18) 25%,rgba(4,2,1,.32) 58%,rgba(4,2,1,.82) 80%,rgba(4,2,1,.96) 100%)}}
 .hcnt{position:absolute;inset:0;z-index:3;display:flex;align-items:center;padding:calc(var(--nav)+var(--sat)+8px) clamp(20px,5vw,60px) calc(var(--sab)+8px)}
 @media(max-width:600px){.hcnt{align-items:flex-end;justify-content:center;padding-bottom:calc(120px + var(--sab))}}
 .htxt{display:flex;flex-direction:column;align-items:flex-start;gap:.8rem;width:clamp(280px,45vw,540px);will-change:transform;margin-left:clamp(40px,10vw,160px)}
@@ -337,8 +335,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .pf-btn{cursor:pointer;font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.2);border-radius:20px;padding:6px 16px;color:rgba(255,255,255,.6);transition:all .2s;outline:none}
 .pf-btn:hover{border-color:rgba(212,175,55,.6);color:#fff;background:rgba(212,175,55,.1)}
 .pf-btn.on{border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.2);box-shadow:0 0 8px rgba(212,175,55,.3)}
-#qBtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:6px;margin-bottom:4px;border-color:var(--gold);color:var(--gold);background:rgba(212,175,55,.1);font-weight:700;box-shadow:0 0 10px rgba(212,175,55,.2);padding:7px 18px;border-radius:20px;font-size:.65rem;font-family:'Cinzel',serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;outline:none}
-#qBtn:hover{background:rgba(212,175,55,.2);box-shadow:0 0 15px rgba(212,175,55,.45);transform:translateY(-1px)}
 .co{width:100%;overflow:hidden;flex:1;display:flex;align-items:center;mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 4%,black 96%,transparent)}
 .ct{display:flex;align-items:center;gap:clamp(10px,2vw,32px);width:max-content;will-change:transform;cursor:grab;user-select:none;padding:26px 0 26px}
 .ct:active{cursor:grabbing}
@@ -419,15 +415,10 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .ad-note-row{font-size:clamp(0.95rem,1.4vw,1.1rem);line-height:1.5;color:rgba(255,255,255,.88)}
 .ad-note-row strong{color:var(--gold);font-family:'Cinzel',serif;font-size:clamp(0.78rem,1.2vw,0.88rem);font-weight:600;letter-spacing:0.06em;display:inline-block;margin-right:6px;text-transform:uppercase}
 .aig{font-family:'EB Garamond',serif;font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.75;color:rgba(212,175,55,.75);font-style:italic}
-.acta{cursor:pointer;align-self:flex-start;margin-top:clamp(10px,2vh,20px);font-family:'Cinzel',serif;font-size:clamp(.72rem,1.4vw,.82rem);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#000;background:var(--gold);border:1px solid var(--gold);padding:11px 26px;transition:all .3s ease;box-shadow:0 4px 15px rgba(212,175,55,.25);outline:none;position:relative;overflow:hidden;animation:ctaPulse 2s infinite alternate}
+.acta{cursor:pointer;align-self:flex-start;margin-top:clamp(10px,2vh,20px);font-family:'Cinzel',serif;font-size:clamp(.72rem,1.4vw,.82rem);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#000;background:var(--gold);border:1px solid var(--gold);padding:11px 26px;transition:all .3s ease;box-shadow:0 4px 15px rgba(212,175,55,.25);outline:none;position:relative;overflow:hidden}
 .acta:hover{background:transparent;color:var(--gold);box-shadow:0 6px 25px rgba(212,175,55,.5)}
 .acta span{display:inline-block;transition:transform 0.3s ease}
 .acta:hover span{transform:translateX(4px)}
-@keyframes ctaPulse {
-  0% { box-shadow: 0 4px 15px rgba(212,175,55,.25); }
-  100% { box-shadow: 0 4px 22px rgba(212,175,55,.6); }
-}
-
 @media(max-width:768px){
   .ac{top:auto;bottom:0;right:0;left:0;border:none;border-top:1px solid rgba(212,175,55,.3);text-align:center;padding:14px;background:rgba(4,2,1,.97)}
   .ai{flex-direction:column;align-items:center;text-align:center;padding:24px 16px 64px;gap:14px;max-height:calc(100vh - 40px);overflow-y:auto}
@@ -496,12 +487,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 .agno:hover,.agno:active{color:rgba(255,255,255,.65)}
 .agwrn{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,248,220,.9);margin-top:10px;line-height:1.5}
 @keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* QUIZ STYLES */
-#qma{position:fixed;inset:0;z-index:8000;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;background:rgba(2,1,0,0);transition:background .4s,opacity .35s}
-#qma.on{pointer-events:all;opacity:1;background:rgba(2,1,0,.92)}
-.q-btn{cursor:pointer;font-family:'Cinzel',serif;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.03);border:1px solid rgba(212,175,55,.28);border-radius:6px;padding:12px 20px;color:#fff;transition:all .25s ease;outline:none;text-align:center}
-.q-btn:hover{border-color:var(--gold);background:rgba(212,175,55,.15);box-shadow:0 0 15px rgba(212,175,55,.25);transform:translateY(-2px)}
 
 /* STORYBOOK STYLE FOR O NAS */
 #pg-onas {
@@ -742,28 +727,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   z-index: 2;
   pointer-events: none;
 }
-.direct-inq-btn {
-  background: none;
-  border: 1px solid rgba(212,175,55,0.35);
-  color: var(--gold);
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  cursor: pointer;
-  margin-left: 8px;
-  vertical-align: middle;
-  transition: all 0.2s ease;
-}
-.direct-inq-btn:hover {
-  background: rgba(212,175,55,0.18);
-  border-color: var(--gold);
-  transform: scale(1.15);
-  box-shadow: 0 0 6px rgba(212,175,55,0.3);
-}
 @media (min-width: 901px) and (max-width: 1150px) {
   nav {
     left: 12px;
@@ -814,8 +777,65 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
     height: clamp(100px, 22vh, 140px) !important;
   }
 }
+
+/* Responsive catalogue and calmer touch controls */
+#pg-ponudba{min-height:0}
+#pg-ponudba .ph{width:100%;margin-top:clamp(14px,2.5vh,28px)}
+#pg-ponudba .co{display:block;min-height:0;overflow-x:hidden;overflow-y:auto;flex:1;width:min(100%,1240px);padding:12px clamp(16px,4vw,48px) 32px;mask-image:none;-webkit-mask-image:none;overscroll-behavior:contain}
+#pg-ponudba .ct{display:grid;width:100%;max-width:1160px;margin:0 auto;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;justify-content:center;gap:clamp(12px,2vw,24px);padding:8px 0 24px;transform:none!important;will-change:auto;cursor:default}
+#pg-ponudba .bc{width:auto;min-width:0;min-height:250px;padding:14px 10px 12px;gap:6px;border:1px solid rgba(212,175,55,.16);border-radius:12px;background:linear-gradient(160deg,rgba(255,255,255,.035),rgba(212,175,55,.025));cursor:pointer}
+#pg-ponudba .bc:hover,#pg-ponudba .bc:focus-visible{border-color:rgba(212,175,55,.55);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(212,175,55,.07));outline:none}
+#pg-ponudba .bi{height:clamp(180px,27vh,280px)!important;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))}
+#pg-ponudba .bc.sel{transform:translateY(-3px) scale(1.015)!important}
+#pg-ponudba .bc.sel .bi{filter:drop-shadow(0 12px 24px rgba(0,0,0,.55)) drop-shadow(0 0 12px rgba(212,175,55,.24))}
+#pg-ponudba .bn{font-size:clamp(.72rem,1vw,.92rem);letter-spacing:.08em;min-height:2.4em}
+#pg-ponudba .bvol{font-size:.68rem;letter-spacing:.1em}
+.hcta{min-height:46px;padding:14px 26px;letter-spacing:.2em}
+button,.pf-btn,.lok-item,.nv a{touch-action:manipulation}
+button:focus-visible,.nv a:focus-visible,.lok-item:focus-visible{outline:2px solid var(--gl);outline-offset:3px}
+@media(min-width:901px){#pg-ponudba .co{max-height:calc(100vh - var(--nav) - 90px)}}
+@media(min-width:601px) and (max-width:900px){
+  #pg-ponudba .ct{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  #pg-ponudba .bc{min-height:220px}
+  #pg-ponudba .bi{height:clamp(150px,23vh,220px)!important}
+}
+@media(max-width:600px){
+  .htit{font-size:clamp(2rem,10vw,3rem);line-height:1.15}
+  .hsub{font-size:.68rem;letter-spacing:.25em}
+  .htag{font-size:.66rem;letter-spacing:.2em}
+  .hmot{font-size:1.08rem;line-height:1.5}
+  #home-cta-wrap{justify-content:center!important;margin-top:8px!important}
+  .hcta{width:min(100%,320px);padding:14px 18px;font-size:.62rem}
+  .lsw-hero{margin-top:6px;padding:6px 12px;gap:12px}
+  #pg-ponudba .ph{padding:12px 12px 4px!important;gap:4px}
+  #pg-ponudba .ph-t{font-size:1.35rem;letter-spacing:.06em}
+  #pg-ponudba .p-fils{gap:6px;margin:6px 0 2px}
+  #pg-ponudba .pf-btn{padding:8px 12px!important;font-size:.58rem;letter-spacing:.06em}
+  #pg-ponudba .co{padding:8px 14px calc(18px + var(--sab));}
+  #pg-ponudba .ct{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:4px 0 16px}
+  #pg-ponudba .bc{min-height:190px;padding:10px 7px;border-radius:10px}
+  #pg-ponudba .bi{height:clamp(140px,23vh,205px)!important}
+  #pg-ponudba .bn{font-size:.68rem;letter-spacing:.04em;min-height:2.5em}
+  #pg-ponudba .bvol{font-size:.62rem;margin-top:0}
+  #pg-onas .ow-scroll{padding-top:18px}
+  .story-container{gap:20px}
+  .story-p{text-align:left;font-size:1.12rem;line-height:1.68}
+  #pg-lokacije .kw{padding-bottom:calc(100px + var(--sab))}
+  #pg-lokacije .kc{padding:18px}
+  #pg-lokacije .kt{font-size:1.12rem}
+  #pg-lokacije .ktx,.lok-item{font-size:1.05rem;line-height:1.5}
+  #pg-kontakt .kw{padding-bottom:calc(100px + var(--sab));gap:16px}
+  #pg-kontakt .kc{padding:18px 16px}
+  #pg-kontakt .kt{font-size:1.25rem}
+  #pg-kontakt .ks{font-size:.55rem;letter-spacing:.2em}
+  #pg-kontakt .mw{height:220px}
+  .nv{bottom:calc(10px + var(--sab));left:10px;right:10px;height:56px}
+  .nv a{font-size:.58rem;letter-spacing:.04em;padding:0 7px;height:42px}
+  #scrollTopBtn{bottom:calc(76px + var(--sab))}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body>
-<button id="scrollTopBtn" title="Na vrh" onclick="var el=document.getElementById('pg-'+activePage); if(el) el.scrollTo({top:0, behavior:'smooth'})">↑</button>
+<button id="scrollTopBtn" title="Na vrh" aria-label="Na vrh" onclick="var el=document.querySelector('.pg.on'); if(el) el.scrollTo({top:0, behavior:'smooth'})">↑</button>
 <div id="cDiamond"></div>
 
 <nav>
@@ -861,7 +881,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
       <p class="hmot" id="hmot"><em>Prava mera</em> – življenska modrost.<br><em>Srk ob pravem času</em> – užitek in krepost.</p>
       <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;width:100%;justify-content:flex-start;" id="home-cta-wrap">
         <button class="hcta" id="hcta" onclick="sp('ponudba',document.getElementById('n1'))">Razišči ponudbo →</button>
-        <button class="hcta" id="hctaQuick" onclick="sendQuickInquiry()" style="background:transparent;border-color:rgba(212,175,55,0.45);color:var(--gold)">Hitro povpraševanje</button>
       </div>
       <div class="lsw-hero" id="lswHero">
         <button class="lb on" id="hSL" onclick="setLang('sl')" title="Slovenščina">
@@ -884,7 +903,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
 <div class="pg" id="pg-ponudba">
   <div class="ph">
     <div class="ph-t" id="phT">Naša Ponudba</div>
-    <button id="qBtn" onclick="openQuiz()">✨ Svetovalec za okus</button>
     <div class="p-fils" id="pFils">
       <button class="pf-btn on" id="f0" onclick="filterB('vse',this)"></button>
       <button class="pf-btn" id="f1" onclick="filterB('zganje',this)"></button>
@@ -1043,18 +1061,6 @@ nav{position:fixed;top:16px;left:24px;right:24px;z-index:20;display:flex;align-i
   <div class="ai">
     <div class="abw"><img class="abimg" id="abimg" src="" alt="" loading="lazy"/><div class="an" id="an"></div><div class="at" id="at"></div><div class="at" id="avol" style="margin-top:4px;color:var(--gold);opacity:1"></div></div>
     <div class="ainf"><div class="aln"></div><div id="maward-info" class="maward-info"></div><div class="ad" id="ad"></div><div class="aig" id="aig"></div><button class="acta" id="acta" onclick="sendInquiry()"></button></div>
-  </div>
-</div>
-
-<div id="qma">
-  <button class="ac" id="qac" onclick="closeQuiz()">✕ Zapri</button>
-  <div style="background:rgba(6,3,1,.97);border:1px solid rgba(212,175,55,.35);padding:clamp(20px,4vw,40px) clamp(16px,3.5vw,36px);border-radius:15px;max-width:480px;width:90%;text-align:center;box-shadow:0 15px 45px rgba(0,0,0,.8);backdrop-filter:blur(20px);position:relative;z-index:8001">
-    <div style="width:50px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:0 auto 16px"></div>
-    <h3 id="qTitle" style="font-family:'Cinzel Decorative',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--gold);margin-bottom:24px;letter-spacing:.08em">Svetovalec za okus</h3>
-    <div id="qContent" style="display:flex;flex-direction:column;gap:12px;align-items:stretch"></div>
-    <div style="margin-top:20px;display:flex;justify-content:flex-start;align-items:center">
-      <button id="qBackBtn" onclick="prevQuizStep()" style="background:none;border:none;color:rgba(255,255,255,.5);font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s">← Nazaj</button>
-    </div>
   </div>
 </div>
 
@@ -1258,259 +1264,14 @@ function setLang(l){
   document.getElementById('ac').textContent=t.zapri;
   document.getElementById('acta').innerHTML=t.povpr + ' <span>&rarr;</span>';
 
-  var qb = document.getElementById('qBtn');
-  if (qb) {
-    var qTitles = {
-      sl: "✨ Svetovalec za okus",
-      en: "✨ Taste Advisor",
-      de: "✨ Geschmacksberater",
-      it: "✨ Consulente del gusto"
-    };
-    qb.textContent = qTitles[l] || qTitles.sl;
-  }
-  if (document.getElementById('qma').classList.contains('on')) {
-    renderQuiz();
-  }
-
   rebuildCarousel();
   if (typeof updateMapPopups === 'function' && typeof markers !== 'undefined' && markers && markers.length > 0) {
     updateMapPopups(l);
   }
 }
 
-/* TASTING GUIDE / QUIZ STATE & LOGIC */
-var quizStep = 1;
-var quizPref = '';
-var quizData = {
-  sl: {
-    title: "Svetovalec za okus",
-    back: "← Nazaj",
-    close: "✕ Zapri",
-    q1: "Kakšen okus vam je najbolj pri srcu?",
-    q1_opt: [
-      { text: "Sladki in sadni likerji", val: "sweet" },
-      { text: "Grenčice in zeliščni likerji", val: "bitter" },
-      { text: "Močna domača žganja", val: "strong" }
-    ],
-    q2_sweet: "Kaj vas najbolj privlači?",
-    q2_sweet_opt: [
-      { text: "Gozdne borovnice", rec: 4 },
-      { text: "Domači cvetlični med", rec: 11 },
-      { text: "Nagrajen bezgov cvet (Medvedova Kri)", rec: 5 },
-      { text: "Originalni smrekovi vršički (Rive)", rec: 8 },
-      { text: "Sveža zlatorogova solza s citrusi", rec: 2 }
-    ],
-    q2_bitter: "Kakšno intenzivnost zelišč iščete?",
-    q2_bitter_opt: [
-      { text: "Aromatična abrašica z zemeljsko noto", rec: 0 },
-      { text: "Nežna zelišča s pridihom komarčka (Hribovec)", rec: 6 },
-      { text: "Tradicionalen grenak košutnik (encijan)", rec: 1 },
-      { text: "Močna zeliščna bomba (40 gorskih rož)", rec: 9 }
-    ],
-    q2_strong: "Kateri destilat vam je ljubši?",
-    q2_strong_opt: [
-      { text: "Prefinjeno dišeče hruškovo žganje", rec: 7 },
-      { text: "Domači destilat iz divjih sliv (Mirabella)", rec: 10 },
-      { text: "Klasičen domači sadjevec", rec: 3 },
-      { text: "Tradicionalen divji brinovec", rec: 12 }
-    ]
-  },
-  en: {
-    title: "Taste Advisor",
-    back: "← Back",
-    close: "✕ Close",
-    q1: "What kind of taste do you prefer?",
-    q1_opt: [
-      { text: "Sweet and fruity liqueurs", val: "sweet" },
-      { text: "Bitters and herbal liqueurs", val: "bitter" },
-      { text: "Strong traditional spirits", val: "strong" }
-    ],
-    q2_sweet: "What attracts you the most?",
-    q2_sweet_opt: [
-      { text: "Wild blueberries", rec: 4 },
-      { text: "Homemade floral honey", rec: 11 },
-      { text: "Awarded elderflower (Medvedova Kri)", rec: 5 },
-      { text: "Original pine resin & sage (Rive)", rec: 8 },
-      { text: "Fresh Zlatorogova Solza with citrus", rec: 2 }
-    ],
-    q2_bitter: "What intensity of herbs are you looking for?",
-    q2_bitter_opt: [
-      { text: "Aromatic southernwood with earthy notes", rec: 0 },
-      { text: "Gentle herbs with a hint of fennel (Hribovec)", rec: 6 },
-      { text: "Deeply bitter traditional gentian root", rec: 1 },
-      { text: "Strong herbal bitters (40 mountain flowers)", rec: 9 }
-    ],
-    q2_strong: "Which distillate do you prefer?",
-    q2_strong_opt: [
-      { text: "Fragrant pear brandy", rec: 7 },
-      { text: "Traditional wild Mirabelle plum brandy", rec: 10 },
-      { text: "Classic mixed fruit brandy (Sadjevec)", rec: 3 },
-      { text: "Traditional wild juniper brandy (Brinovec)", rec: 12 }
-    ]
-  },
-  de: {
-    title: "Geschmacksberater",
-    back: "← Zurück",
-    close: "✕ Schließen",
-    q1: "Welchen Geschmack bevorzugen Sie?",
-    q1_opt: [
-      { text: "Süße und fruchtige Liköre", val: "sweet" },
-      { text: "Bitter- und Kräuterliköre", val: "bitter" },
-      { text: "Starke traditionelle Brände", val: "strong" }
-    ],
-    q2_sweet: "Was zieht Sie am meisten an?",
-    q2_sweet_opt: [
-      { text: "Waldheidelbeeren", rec: 4 },
-      { text: "Hausgemachter Blütenhonig", rec: 11 },
-      { text: "Prämierte Holunderblüte (Medvedova Kri)", rec: 5 },
-      { text: "Originaler Fichtenharz & Salbei (Rive)", rec: 8 },
-      { text: "Frische Zlatorogova Solza mit Zitrus", rec: 2 }
-    ],
-    q2_bitter: "Welche Kräuterintensität suchen Sie?",
-    q2_bitter_opt: [
-      { text: "Aromatische Eberraute mit erdiger Note", rec: 0 },
-      { text: "Milde Kräuter mit einem Hauch von Fenchel (Hribovec)", rec: 6 },
-      { text: "Traditionelle bittere Enzianwurzel", rec: 1 },
-      { text: "Starker Kräuterbitter (40 Bergblumen)", rec: 9 }
-    ],
-    q2_strong: "Welches Destillat bevorzugen Sie?",
-    q2_strong_opt: [
-      { text: "Duftender Birnenbrand", rec: 7 },
-      { text: "Traditioneller wilder Mirabellenbrand", rec: 10 },
-      { text: "Klassischer hausgemachter Obstbrand", rec: 3 },
-      { text: "Traditioneller wilder Wacholderbrand", rec: 12 }
-    ]
-  },
-  it: {
-    title: "Consulente del gusto",
-    back: "← Indietro",
-    close: "✕ Chiudi",
-    q1: "Che tipo di gusto preferisci?",
-    q1_opt: [
-      { text: "Liquori dolci e fruttati", val: "sweet" },
-      { text: "Amari e liquori alle erbe", val: "bitter" },
-      { text: "Acquaviti forti tradizionali", val: "strong" }
-    ],
-    q2_sweet: "Cosa ti attrae di più?",
-    q2_sweet_opt: [
-      { text: "Mirtilli selvatici", rec: 4 },
-      { text: "Miele floreale fatto in casa", rec: 11 },
-      { text: "Fiori di sambuco premiati (Medvedova Kri)", rec: 5 },
-      { text: "Resina di abete originale e salvia (Rive)", rec: 8 },
-      { text: "Zlatorogova Solza fresca con agrumi", rec: 2 }
-    ],
-    q2_bitter: "Quale intensità di erbe cerchi?",
-    q2_bitter_opt: [
-      { text: "Abrotano aromatico con note terrose", rec: 0 },
-      { text: "Erbe delicate con un tocco di finocchio (Hribovec)", rec: 6 },
-      { text: "Radice di genziana tradizionalmente amara", rec: 1 },
-      { text: "Forte amaro alle erbe (40 fiori di montagna)", rec: 9 }
-    ],
-    q2_strong: "Quale distillato preferisci?",
-    q2_strong_opt: [
-      { text: "Acquavite profumata di pera", rec: 7 },
-      { text: "Tradizionale acquavite di prugne Mirabelle", rec: 10 },
-      { text: "Classica acquavite di frutta mista (Sadjevec)", rec: 3 },
-      { text: "Tradizionale acquavite di ginepro selvatico", rec: 12 }
-    ]
-  }
-};
-
-function openQuiz() {
-  quizStep = 1;
-  quizPref = '';
-  document.getElementById('qma').classList.add('on');
-  renderQuiz();
-}
-
-function closeQuiz() {
-  document.getElementById('qma').classList.remove('on');
-}
-
-function prevQuizStep() {
-  if (quizStep > 1) {
-    quizStep--;
-    renderQuiz();
-  }
-}
-
-function selectQuizPref(val) {
-  quizPref = val;
-  quizStep = 2;
-  renderQuiz();
-}
-
-function recommendProduct(idx) {
-  closeQuiz();
-  filterB('vse', document.getElementById('f0'));
-  setTimeout(function() {
-    var cards = Array.from(track.querySelectorAll('.bc'));
-    var targetCard = cards.find(function(c) {
-      return parseInt(c.dataset.idx) === idx;
-    });
-    if (targetCard) {
-      var cardOffsetLeft = targetCard.offsetLeft;
-      var containerWidth = document.querySelector('.co').offsetWidth;
-      pos = cardOffsetLeft - (containerWidth / 2) + (CW / 2);
-      track.style.transform = 'translateX(-' + pos.toFixed(2) + 'px)';
-      selB(targetCard);
-      openAnim(btls[idx]);
-    }
-  }, 120);
-}
-
-function renderQuiz() {
-  var data = quizData[lang] || quizData.sl;
-  document.getElementById('qTitle').textContent = data.title;
-  document.getElementById('qac').textContent = data.close;
-  var backBtn = document.getElementById('qBackBtn');
-  backBtn.textContent = data.back;
-  if (quizStep > 1) {
-    backBtn.style.opacity = '1';
-    backBtn.style.pointerEvents = 'all';
-  } else {
-    backBtn.style.opacity = '0';
-    backBtn.style.pointerEvents = 'none';
-  }
-  var content = document.getElementById('qContent');
-  content.innerHTML = '';
-  if (quizStep === 1) {
-    var qText = document.createElement('p');
-    qText.textContent = data.q1;
-    qText.style.fontSize = 'clamp(0.95rem, 1.6vw, 1.25rem)';
-    qText.style.color = 'rgba(255,255,255,.85)';
-    qText.style.marginBottom = '16px';
-    qText.style.fontFamily = "'EB Garamond', serif";
-    content.appendChild(qText);
-    data.q1_opt.forEach(function(opt) {
-      var btn = document.createElement('button');
-      btn.className = 'q-btn';
-      btn.textContent = opt.text;
-      btn.onclick = function() { selectQuizPref(opt.val); };
-      content.appendChild(btn);
-    });
-  } else if (quizStep === 2) {
-    var qText = document.createElement('p');
-    var qTitleKey = 'q2_' + quizPref;
-    var qOptsKey = 'q2_' + quizPref + '_opt';
-    qText.textContent = data[qTitleKey];
-    qText.style.fontSize = 'clamp(0.95rem, 1.6vw, 1.25rem)';
-    qText.style.color = 'rgba(255,255,255,.85)';
-    qText.style.marginBottom = '16px';
-    qText.style.fontFamily = "'EB Garamond', serif";
-    content.appendChild(qText);
-    data[qOptsKey].forEach(function(opt) {
-      var btn = document.createElement('button');
-      btn.className = 'q-btn';
-      btn.textContent = opt.text;
-      btn.onclick = function() { recommendProduct(opt.rec); };
-      content.appendChild(btn);
-    });
-  }
-}
-
 var track=document.getElementById('track');
-var SW=0,pos=0,CW=0,spd=0.45,boost=0,drag=false,wd=false,dsx=0,dsp=0;
+var activePage = 'home';
 function rebuildCarousel(){
   var t=I[lang];
   track.innerHTML='';
@@ -1523,62 +1284,26 @@ function rebuildCarousel(){
     }
   });
   if(filteredBtls.length === 0) return;
-  CW=Math.round(Math.max(100,Math.min(180,innerWidth*.13)))+Math.round(Math.max(10,innerWidth*.02));
-  var totalWidth = filteredBtls.length * CW;
-  var shouldScroll = (activeFilter === 'vse') || (totalWidth > window.innerWidth);
-  var repeats = shouldScroll ? 3 : 1;
-  for(var c=0;c<repeats;c++) filteredBtls.forEach(function(b){
+  filteredBtls.forEach(function(b){
     var d=document.createElement('div'); d.className='bc'; d.dataset.idx=b.origIdx;
-    var awardLine = '<p class="b-award-sub" style="visibility:hidden; background:none; border:none; box-shadow:none">&nbsp;</p>';
+    d.setAttribute('role','button'); d.setAttribute('tabindex','0');
+    d.setAttribute('aria-label',(b.fullname||b.name)+', '+b.vol+'% vol.');
+    var awardLine = '';
     if([5, 8, 9].indexOf(b.origIdx) !== -1){
       awardLine = '<p class="b-award-sub"><svg viewBox="0 0 24 24"><path d="M12 21.5c-4.4 0-8-3.6-8-8 0-1.8.6-3.5 1.7-4.9.4.5.8 1.1 1.2 1.6-.6.9-1 2.1-1 3.3 0 3.3 2.7 6 6 6s6-2.7 6-6c0-1.2-.4-2.4-1-3.3.4-.5.8-1.1 1.2-1.6 1.1 1.4 1.7 3.1 1.7 4.9 0 4.4-3.6 8-8 8zm-4.7-9.5c-.3-.8-.4-1.7-.4-2.5 0-1.6.5-3.1 1.4-4.4.4.5.7 1.1 1 1.6-.6.9-1 1.8-1 2.8 0 .8.1 1.6.3 2.5l-1.3 0zm9.4 0l-1.3 0c.2-.9.3-1.7.3-2.5 0-1-.4-1.9-1-2.8.3-.5.6-1.1 1-1.6.9 1.3 1.4 2.8 1.4 4.4 0 .8-.1 1.7-.4 2.5z"/></svg>' + t.award + '</p>';
     }
-    d.innerHTML='<div class="bi"><img src="'+b.img+'" alt="'+b.name+'" loading="lazy"/></div><p class="bn">'+b.name+'</p><p class="bvol">'+b.vol+'% vol. <button class="direct-inq-btn" onclick="event.stopPropagation(); directInquiry('+b.origIdx+')" title="Povpraševanje">&#9993;</button></p>'+awardLine;
+    d.innerHTML='<div class="bi"><img src="'+b.img+'" alt="'+b.name+'" loading="lazy"/></div><p class="bn">'+b.name+'</p><p class="bvol">'+b.vol+'% vol.</p>'+awardLine;
     track.appendChild(d);
   });
-  var coObj=document.querySelector('.co');
-  if (shouldScroll) {
-    SW=filteredBtls.length*CW; pos=SW; track.style.transform='translateX(-'+pos+'px)';
-    coObj.style.justifyContent = 'flex-start';
-  } else {
-    SW=0; pos=0; track.style.transform='translateX(0)';
-    coObj.style.justifyContent = 'center';
-  }
-  trackNeedScroll = shouldScroll;
-  if(sel){sel=null;track.classList.remove('hs');}
-}
-var co=document.querySelector('.co');
-co.addEventListener('mousemove',function(e){var r=co.getBoundingClientRect();boost=((e.clientX-r.left)/r.width-.5)*4.5;});
-co.addEventListener('mouseleave',function(){boost=0;});
-track.addEventListener('mousedown',function(e){drag=true;wd=false;dsx=e.clientX;dsp=pos;});
-window.addEventListener('mousemove',function(e){if(drag){var dx=e.clientX-dsx;if(Math.abs(dx)>4)wd=true;pos=dsp-dx;}});
-window.addEventListener('mouseup',function(){drag=false;});
-track.addEventListener('touchstart',function(e){drag=true;wd=false;dsx=e.touches[0].clientX;dsp=pos;},{passive:true});
-window.addEventListener('touchmove',function(e){if(drag){var dx=e.touches[0].clientX-dsx;if(Math.abs(dx)>4)wd=true;pos=dsp-dx;}},{passive:true});
-window.addEventListener('touchend',function(){setTimeout(function(){drag=false;},10);});
-var activePage = 'home';
-var trackNeedScroll = true;
-(function ctick(){
-  if(activePage==='ponudba' && trackNeedScroll){
-    if(!drag&&SW){pos+=spd+boost;if(pos>=SW*2)pos-=SW;if(pos<SW)pos+=SW;track.style.transform='translateX(-'+pos.toFixed(2)+'px)';}
-  }
-  requestAnimationFrame(ctick);
-})();
-
-var sel=null;
-function selB(c){
-  if(sel&&sel!==c) sel.classList.remove('sel');
-  if(sel===c){c.classList.remove('sel');track.classList.remove('hs');sel=null;return false;}
-  c.classList.add('sel');track.classList.add('hs');sel=c;return true;
 }
 track.addEventListener('click',function(e){
-  if(wd)return; var c=e.target.closest('.bc'); if(!c)return;
-  if(selB(c)) openAnim(btls[parseInt(c.dataset.idx)]);
+  var c=e.target.closest('.bc'); if(!c)return;
+  openAnim(btls[parseInt(c.dataset.idx)]);
 });
-document.addEventListener('click',function(e){
-  if(!e.target.closest('#track')&&!e.target.closest('#ma')){
-    if(sel){sel.classList.remove('sel');track.classList.remove('hs');sel=null;}
-  }
+track.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  var c=e.target.closest('.bc'); if(!c)return;
+  e.preventDefault(); openAnim(btls[parseInt(c.dataset.idx)]);
 });
 
 var ma=document.getElementById('ma');
@@ -1638,11 +1363,9 @@ function sendInquiry(){
 }
 function closeAnim(){
   ma.classList.remove('on');
-  if(sel){sel.classList.remove('sel');track.classList.remove('hs');sel=null;}
 }
 ma.addEventListener('click',function(e){if(e.target===this)closeAnim();});
-document.getElementById('qma').addEventListener('click',function(e){if(e.target===this)closeQuiz();});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAnim();closeQuiz();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAnim();});
 
 function sp(id,lnk){
   activePage = id;
@@ -1650,7 +1373,6 @@ function sp(id,lnk){
   document.getElementById('pg-'+id).classList.add('on');
   document.querySelectorAll('.nv a').forEach(function(a){a.classList.remove('on');});
   if(lnk)lnk.classList.add('on');
-  if(sel){sel.classList.remove('sel');track.classList.remove('hs');sel=null;}
   document.body.classList.toggle('nav-hidden', id !== 'home');
   // Reset scroll-to-top button state when leaving O nas or Stores
   if (id !== 'onas' && id !== 'lokacije' && scrollTopBtn) {
@@ -1717,7 +1439,7 @@ var scrollTopBtn = document.getElementById('scrollTopBtn');
   if (pageEl && scrollTopBtn) {
     pageEl.addEventListener('scroll', function() {
       var threshold = isT ? 150 : 80;
-      if (pageEl.scrollHeight - pageEl.scrollTop - pageEl.clientHeight < threshold) {
+      if (pageEl.scrollTop > threshold) {
         scrollTopBtn.classList.add('show');
       } else {
         scrollTopBtn.classList.remove('show');
@@ -1725,27 +1447,6 @@ var scrollTopBtn = document.getElementById('scrollTopBtn');
     });
   }
 });
-
-// HOVER TILT ON BOTTLES LOGIC
-if(!isT) {
-  track.addEventListener('mousemove', function(e) {
-    var card = e.target.closest('.bc');
-    if (!card) return;
-    var img = card.querySelector('.bi img');
-    if (!img) return;
-    var rect = card.getBoundingClientRect();
-    var x = e.clientX - rect.left;
-    var tiltY = ((x / rect.width) - 0.5) * 6; // -3 to +3 degrees
-    img.style.transform = 'rotate(' + tiltY.toFixed(1) + 'deg) scale(1.05)';
-  });
-  track.addEventListener('mouseout', function(e) {
-    var card = e.target.closest('.bc');
-    if (card) {
-      var img = card.querySelector('.bi img');
-      if (img) img.style.transform = '';
-    }
-  });
-}
 
 // GOLD PARTICLES LOGIC
 var canvas = document.getElementById('bg-particles');
@@ -2009,32 +1710,6 @@ function revealEmail() {
     el.innerHTML = '<a href="mailto:' + user + '@' + domain + '">' + user + '@' + domain + '</a>';
   }
 }
-function directInquiry(idx) {
-  var b = btls[idx];
-  if (!b) return;
-  openedBtl = b;
-  sendInquiry();
-}
-function sendQuickInquiry() {
-  var email = 'valtersiber@gmail.com';
-  var subject = '';
-  var body = '';
-  if(lang === 'sl'){
-    subject = 'Splošno povpraševanje';
-    body = 'Pozdravljeni,\n\npišem vam preko spletne strani in se zanimam za vaša domača žganja in likerje.\n\nLep pozdrav';
-  } else if(lang === 'de'){
-    subject = 'Allgemeine Anfrage';
-    body = 'Hallo,\n\nich kontaktiere Sie über die Website und interessiere mich für Ihre Brände und Liköre.\n\nMit freundlichen Grüßen';
-  } else if(lang === 'it'){
-    subject = 'Richiesta generica';
-    body = 'Buongiorno,\n\nvi scrivo tramite il sito web e sono interessato alle vostre acquaviti e liquori.\n\nCordiali saluti';
-  } else {
-    subject = 'General Inquiry';
-    body = 'Hello,\n\nI am contacting you via the website and I am interested in your spirits and liqueurs.\n\nBest regards';
-  }
-  window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-}
-
 // Avtomatsko zaznavanje jezika brskalnika ali URL parametra (?lang=)
 var urlParams = new URLSearchParams(window.location.search);
 var paramLang = urlParams.get('lang');
