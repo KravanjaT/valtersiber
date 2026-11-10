@@ -1044,7 +1044,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
   #ma .aig{font-size:.8rem;line-height:1.25}
   #ma .acta{align-self:flex-start;margin-top:1px}
 }
-#cookieConsent{position:fixed;left:50%;bottom:calc(18px + var(--sab));transform:translateX(-50%);z-index:9000;width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 36px - var(--sat) - var(--sab));overflow:auto;color:#fff;font-family:'EB Garamond',Georgia,serif}
+#cookieConsent{position:fixed;left:50%;bottom:calc(18px + var(--sab));transform:translateX(-50%);z-index:10001;width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 36px - var(--sat) - var(--sab));overflow:auto;color:#fff;font-family:'EB Garamond',Georgia,serif}
 #cookieConsent[hidden],#cookieReopen[hidden],#cookieSave[hidden]{display:none!important}
 .cookie-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;padding:20px 22px;background:rgba(14,11,7,.98);border:1px solid rgba(212,175,55,.46);border-radius:16px;box-shadow:0 14px 45px rgba(0,0,0,.68),inset 0 1px 0 rgba(255,255,255,.06)}
 .cookie-title{margin-bottom:6px;color:var(--gold);font-family:'Cinzel',Georgia,serif;font-size:.8rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
@@ -1060,7 +1060,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
 .cookie-actions button:hover,.cookie-reopen:hover{border-color:var(--gold);color:#fff;background:rgba(212,175,55,.1)}
  #cookieAccept{background:transparent;border-color:rgba(212,175,55,.42);color:rgba(255,248,225,.9)}
  #cookieAccept:hover{background:rgba(212,175,55,.1);border-color:var(--gold);color:#fff}
- #privacyNotice{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
+ #privacyNotice{position:fixed;inset:0;z-index:10002;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
  #privacyNotice[hidden]{display:none!important}
  .privacy-card{position:relative;width:min(760px,100%);max-height:min(82dvh,850px);overflow:auto;padding:clamp(22px,4vw,38px);border:1px solid rgba(212,175,55,.38);border-radius:18px;background:#100d09;color:rgba(255,248,225,.88);box-shadow:0 24px 80px rgba(0,0,0,.7);font-family:'EB Garamond',Georgia,serif;font-size:1.04rem;line-height:1.55}
  .privacy-card h2{margin:0 48px 22px 0;color:var(--gold);font-family:'Cinzel',Georgia,serif;font-size:clamp(1.05rem,2.4vw,1.4rem);letter-spacing:.05em}
@@ -1108,7 +1108,7 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
   #pg-home .hmot em{color:#e8cb7d}
   #pg-home .hcta{margin-top:4px;padding:8px 0;border-bottom:1px solid rgba(212,175,55,.46);font-size:.61rem;letter-spacing:.16em;color:#f0d77f}
 }
-</style><style>#devPreviewBadge{position:fixed;top:7px;right:10px;z-index:11001;padding:5px 9px;border:1px solid rgba(212,175,55,.5);border-radius:20px;background:rgba(6,4,2,.9);color:#f0d77f;font:600 9px Cinzel,serif;letter-spacing:.1em;text-transform:uppercase}@media(max-width:900px){#devPreviewBadge{top:auto;bottom:calc(74px + var(--sab));right:12px;font-size:8px}}</style>
+</style>
 <style>
 /* Development refinement: open navigation, softer fade, and a consistent type hierarchy. */
 @media(min-width:901px){
@@ -1198,7 +1198,28 @@ body.story-motion #pg-onas .story-img-process.is-visible{transform:translate(0,0
 #pg-onas .story-img-process::before{content:''!important;display:block!important;position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse at center,transparent 72%,rgba(62,28,11,.08) 88%,rgba(22,9,5,.3) 100%);mix-blend-mode:multiply;opacity:.52;transform:none!important;transition:none!important}
 #pg-onas .story-img-process::after{z-index:1;background:linear-gradient(180deg,transparent 70%,rgba(38,17,7,.08))}
 @media(max-width:700px){#pg-onas .story-img-container{margin:12px auto 18px}#pg-onas .story-img-process .story-img,#pg-onas .story-img-place .story-img{aspect-ratio:1.3}}
-</style></head><body><div id="devPreviewBadge">RAZVOJNI PREDOGLED · SAMO DOMAČA STRAN</div>
+/* Simple mobile navigation with text only; highlight the current section. */
+@media(max-width:900px){
+  .nv{position:fixed;left:0;right:0;bottom:0;height:calc(62px + var(--sab));padding:0 4px var(--sab);border:0;border-top:1px solid rgba(212,175,55,.18);border-radius:0;background:rgba(10,8,6,.97);box-shadow:0 -5px 18px rgba(0,0,0,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;justify-content:space-around;align-items:center;gap:0}
+  .nv a{position:relative;flex:1;min-width:0;height:48px;min-height:44px;padding:0 2px;border:0;border-radius:0;background:transparent!important;box-shadow:none!important;color:rgba(255,248,231,.76);font-size:.62rem;letter-spacing:.025em;font-weight:600;white-space:nowrap;flex-direction:row;gap:0;text-shadow:none}
+  .nv a .ni{display:none!important}
+  .nv a .nt{display:inline-block;max-width:100%;opacity:1;margin:0;line-height:1}
+  .nv a.on{color:#f0d77f;border:0;border-radius:0;background:transparent!important;box-shadow:none!important;font-weight:700;text-shadow:0 0 12px rgba(212,175,55,.28)}
+  .nv a.on::before,.nv a.on::after{display:none!important}
+  .nv a:active{color:#fff}
+}
+@media(max-width:390px){.nv{padding-left:2px;padding-right:2px}.nv a{font-size:.58rem;letter-spacing:.01em}}
+@media(max-width:350px){.nv a{font-size:.53rem;letter-spacing:0}}
+@media(max-width:600px){
+  #pg-home .hcnt{align-items:center;justify-content:center;padding:calc(76px + var(--sat)) 18px calc(76px + var(--sab))}
+  #pg-home .htxt{gap:.58rem}
+}
+@media(max-width:600px) and (max-height:650px){
+  #pg-home .hcnt{padding-top:calc(70px + var(--sat));padding-bottom:calc(68px + var(--sab))}
+  #pg-home .htxt{gap:.42rem}
+}
+#cookieConsent{z-index:10001}
+#privacyNotice{z-index:10002}</style></head><body>
 <button id="scrollTopBtn" title="Na vrh" aria-label="Na vrh" onclick="var el=document.querySelector('.pg.on'); if(el) el.scrollTo({top:0, behavior:'smooth'})">↑</button>
 <div id="cDiamond"></div>
 
@@ -1209,7 +1230,7 @@ body.story-motion #pg-onas .story-img-process.is-visible{transform:translate(0,0
     <a href="#" id="n1" onclick="sp('ponudba',this);return false"><svg class="ni" viewBox="0 0 24 24"><path d="M9 3h6v3H9z M12 6v3 M8 9h8v11a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z"/></svg><span class="nt">Ponudba</span></a>
     <a href="#" id="n2" onclick="sp('onas',this);return false"><svg class="ni" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><span class="nt">O nas</span></a>
     <a href="#" id="n4" onclick="sp('lokacije',this);return false"><svg class="ni" viewBox="0 0 24 24"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg><span class="nt">Trgovine</span></a>
-    <a href="#" id="n3" onclick="sp('kontakt',this);return false"><svg class="ni" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span class="nt">Kontakt</span></a>
+    <a href="#" id="n3" onclick="sp('kontakt',this);return false"><svg class="ni" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg><span class="nt">Kontakt</span></a>
   </div>
   <div class="lsw">
     <button class="lb on" id="bSL" onclick="setLang('sl')" title="Slovenščina">
@@ -2235,10 +2256,10 @@ function lockMap() {
   if (o) o.style.display = 'flex';
 }
 var cookieCopy = {
-  sl:{title:'Nastavitve zasebnosti',summary:'Upravljavec je Domačija Valter - Siber, Valter Čujec. Potrditev starosti si zapomnimo do konca seje zavihka. Zemljevidi in pisave se naložijo samo po dovoljenju.',details:'Potrditev starosti ostane shranjena samo do konca trenutne seje zavihka. Izbiro glede Zemljevidov in pisav hranimo največ 6 mesecev. Google Zemljevidi in Google Fonts se naložijo šele po izrecnem dovoljenju. Podrobnosti: Izjava o zasebnosti.',maps:'Dovolim nalaganje Google Zemljevidov',fonts:'Dovolim nalaganje pisav Google Fonts',reject:'Samo nujni',settings:'Nastavitve',accept:'Dovoli Google Zemljevide in pisave',save:'Shrani izbiro',reopen:'Nastavitve piškotkov',mapPrompt:'Google zemljevid naložimo samo z dovoljenjem',mapTap:'👆 Tapni za premikanje zemljevida',contactPrompt:'Google zemljevid se naloži po dovoljenju'},
-  en:{title:'Privacy settings',summary:'The data controller is Domačija Valter - Siber, Valter Čujec. Age confirmation lasts for this tab session. Maps and fonts load only if allowed.',details:'Age confirmation is stored only for the current tab session. Your choices for Maps and fonts are kept for up to 6 months. Google Maps and Google Fonts load only after explicit permission. Details: Privacy notice.',maps:'Allow Google Maps to load',fonts:'Allow Google Fonts to load',reject:'Necessary only',settings:'Settings',accept:'Allow Google Maps and fonts',save:'Save choices',reopen:'Privacy settings',mapPrompt:'Google Maps loads only with your permission',mapTap:'👆 Tap to move the map',contactPrompt:'Google Maps loads after permission'},
-  de:{title:'Datenschutzeinstellungen',summary:'Verantwortlicher ist Domačija Valter - Siber, Valter Čujec. Die Altersbestätigung gilt nur für diese Tab-Sitzung. Karten und Schriftarten werden nur mit Zustimmung geladen.',details:'Die Altersbestätigung wird nur während der aktuellen Tab-Sitzung gespeichert. Ihre Auswahl für Maps und Schriftarten wird bis zu 6 Monate gespeichert. Google Maps und Google Fonts werden erst nach ausdrücklicher Zustimmung geladen. Einzelheiten: Datenschutzhinweis.',maps:'Google Maps laden lassen',fonts:'Google Fonts laden lassen',reject:'Nur notwendige',settings:'Einstellungen',accept:'Google Maps und Schriftarten erlauben',save:'Auswahl speichern',reopen:'Datenschutzeinstellungen',mapPrompt:'Google Maps wird nur mit Ihrer Zustimmung geladen',mapTap:'👆 Tippen, um die Karte zu bewegen',contactPrompt:'Google Maps wird nach Zustimmung geladen'},
-  it:{title:'Impostazioni privacy',summary:'Il titolare del trattamento è Domačija Valter - Siber, Valter Čujec. La conferma dell’età vale solo per la sessione della scheda. Mappe e caratteri si caricano solo con il consenso.',details:'La conferma dell’età viene conservata solo per la sessione corrente della scheda. Le scelte per Maps e caratteri sono conservate fino a 6 mesi. Google Maps e Google Fonts si caricano solo dopo un consenso esplicito. Dettagli: Informativa privacy.',maps:'Consenti il caricamento di Google Maps',fonts:'Consenti il caricamento di Google Fonts',reject:'Solo necessari',settings:'Impostazioni',accept:'Consenti Google Maps e caratteri',save:'Salva scelta',reopen:'Impostazioni privacy',mapPrompt:'Google Maps si carica solo con il tuo consenso',mapTap:'👆 Tocca per muovere la mappa',contactPrompt:'Google Maps si carica dopo il consenso'}
+  sl:{title:'Nastavitve zasebnosti',summary:'Upravljavec je Domačija Valter - Siber, Valter Čujec. Zemljevide in pisave Google naložimo samo, če jih dovolite. Brez dovoljenja uporabimo pisavo, ki je že na napravi.',details:'Izbiro glede Google Zemljevidov in pisav hranimo največ 6 mesecev. Naložijo se samo po izrecnem dovoljenju; sicer uporabimo lokalno pisavo naprave. Podrobnosti: Izjava o zasebnosti.',maps:'Dovolim nalaganje Google Zemljevidov',fonts:'Dovolim nalaganje pisav Google Fonts',reject:'Samo nujni',settings:'Nastavitve',accept:'Dovoli vse',save:'Shrani izbiro',reopen:'Nastavitve piškotkov',mapPrompt:'Google zemljevid naložimo samo z dovoljenjem',mapTap:'👆 Tapni za premikanje zemljevida',contactPrompt:'Google zemljevid se naloži po dovoljenju'},
+  en:{title:'Privacy settings',summary:'The data controller is Domačija Valter - Siber, Valter Čujec. Google Maps and fonts load only if you allow them. Without permission, the site uses a font already on your device.',details:'Your choices for Google Maps and fonts are kept for up to 6 months. They load only after explicit permission; otherwise, the site uses a font already on your device. Details: Privacy notice.',maps:'Allow Google Maps to load',fonts:'Allow Google Fonts to load',reject:'Necessary only',settings:'Settings',accept:'Allow all',save:'Save choices',reopen:'Privacy settings',mapPrompt:'Google Maps loads only with your permission',mapTap:'👆 Tap to move the map',contactPrompt:'Google Maps loads after permission'},
+  de:{title:'Datenschutzeinstellungen',summary:'Verantwortlicher ist Domačija Valter - Siber, Valter Čujec. Google Maps und Schriftarten werden nur mit Ihrer Zustimmung geladen. Ohne Zustimmung verwendet die Website eine Schriftart von Ihrem Gerät.',details:'Ihre Auswahl für Google Maps und Schriftarten wird bis zu 6 Monate gespeichert. Die Dienste laden erst nach ausdrücklicher Zustimmung; sonst verwendet die Website eine lokale Schriftart. Einzelheiten: Datenschutzhinweis.',maps:'Google Maps laden lassen',fonts:'Google Fonts laden lassen',reject:'Nur notwendige',settings:'Einstellungen',accept:'Alles erlauben',save:'Auswahl speichern',reopen:'Datenschutzeinstellungen',mapPrompt:'Google Maps wird nur mit Ihrer Zustimmung geladen',mapTap:'👆 Tippen, um die Karte zu bewegen',contactPrompt:'Google Maps wird nach Zustimmung geladen'},
+  it:{title:'Impostazioni privacy',summary:'Il titolare del trattamento è Domačija Valter - Siber, Valter Čujec. Google Maps e i caratteri si caricano solo con il tuo consenso. Senza consenso, il sito usa un carattere già presente sul dispositivo.',details:'Le scelte per Google Maps e i caratteri sono conservate fino a 6 mesi. I servizi si caricano solo dopo un consenso esplicito; altrimenti il sito usa un carattere locale. Dettagli: Informativa privacy.',maps:'Consenti il caricamento di Google Maps',fonts:'Consenti il caricamento di Google Fonts',reject:'Solo necessari',settings:'Impostazioni',accept:'Consenti tutto',save:'Salva scelta',reopen:'Impostazioni privacy',mapPrompt:'Google Maps si carica solo con il tuo consenso',mapTap:'👆 Tocca per muovere la mappa',contactPrompt:'Google Maps si carica dopo il consenso'}
 };
 var savedCookieChoice = null;
 function hasGoogleMapsConsent(){return !!(savedCookieChoice&&savedCookieChoice.maps===true&&savedCookieChoice.expiresAt>Date.now());}
