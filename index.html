@@ -1047,6 +1047,35 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
   #ma .aig{font-size:.8rem;line-height:1.25}
   #ma .acta{align-self:flex-start;margin-top:1px}
 }
+#cookieConsent{position:fixed;left:50%;bottom:calc(18px + var(--sab));transform:translateX(-50%);z-index:9000;width:min(880px,calc(100% - 32px));max-height:calc(100dvh - 36px - var(--sat) - var(--sab));overflow:auto;color:#fff;font-family:'EB Garamond',serif}
+#cookieConsent[hidden],#cookieReopen[hidden],#cookieSave[hidden]{display:none!important}
+.cookie-card{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;padding:20px 22px;background:rgba(14,11,7,.98);border:1px solid rgba(212,175,55,.46);border-radius:16px;box-shadow:0 14px 45px rgba(0,0,0,.68),inset 0 1px 0 rgba(255,255,255,.06)}
+.cookie-title{margin-bottom:6px;color:var(--gold);font-family:'Cinzel',serif;font-size:.8rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+.cookie-copy p{max-width:62ch;color:rgba(255,248,225,.88);font-size:1rem;line-height:1.42}
+.cookie-details{margin-top:12px;padding-top:11px;border-top:1px solid rgba(212,175,55,.22)}
+.cookie-details p{font-size:.94rem}
+.cookie-toggle{display:flex;align-items:center;gap:9px;margin-top:10px;color:rgba(255,248,225,.92);font-size:.96rem;cursor:pointer}
+.cookie-toggle input{width:18px;height:18px;accent-color:var(--gold)}
+.cookie-details a{display:inline-block;margin-top:8px;color:var(--gl);font-size:.9rem;text-underline-offset:3px}
+.cookie-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.cookie-actions button,.cookie-reopen{min-height:42px;padding:9px 13px;border:1px solid rgba(212,175,55,.42);border-radius:999px;background:transparent;color:rgba(255,248,225,.9);font-family:'Cinzel',serif;font-size:.56rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.cookie-actions button:hover,.cookie-reopen:hover{border-color:var(--gold);color:#fff;background:rgba(212,175,55,.1)}
+#cookieAccept{background:var(--gold);border-color:var(--gold);color:#171108}
+#cookieAccept:hover{background:var(--gl);color:#171108}
+.cookie-reopen{position:fixed;left:16px;bottom:18px;z-index:8500;background:rgba(8,6,3,.88);backdrop-filter:blur(10px);font-size:.52rem}
+.map-consent-prompt{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;width:100%;padding:20px;border:0;background:rgba(5,4,2,.62);color:var(--gold);font-family:'Cinzel',serif;font-size:clamp(.65rem,1vw,.78rem);font-weight:600;letter-spacing:.08em;line-height:1.5;text-align:center;text-transform:uppercase;cursor:pointer}
+.mw:not(.map-enabled) iframe{display:none}
+.mw.map-enabled .map-consent-prompt{display:none}
+@media(max-width:700px){
+  #cookieConsent{bottom:calc(76px + var(--sab));width:calc(100% - 20px);max-height:calc(100dvh - 96px - var(--sat) - var(--sab))}
+  .cookie-card{grid-template-columns:1fr;gap:13px;padding:16px 15px;border-radius:14px}
+  .cookie-title{font-size:.74rem}
+  .cookie-copy p{font-size:.98rem;line-height:1.38}
+  .cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .cookie-actions button{min-height:44px;padding:8px 10px;font-size:.52rem}
+  #cookieAccept,#cookieSave{grid-column:1/-1}
+  .cookie-reopen{left:12px;bottom:calc(80px + var(--sab));min-height:36px;padding:7px 10px}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style></head><body>
 <button id="scrollTopBtn" title="Na vrh" aria-label="Na vrh" onclick="var el=document.querySelector('.pg.on'); if(el) el.scrollTo({top:0, behavior:'smooth'})">↑</button>
@@ -1171,10 +1200,10 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
     <div class="pon-divider"><span></span><i aria-hidden="true"></i><span></span></div>
   </div>
   <div id="lokMapContainer" style="max-width: 1400px; width: 95%; height: clamp(280px, 60vh, 750px); flex-shrink: 0; margin: 20px auto 40px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.4); overflow: hidden; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.8);">
-    <iframe id="lokMapIframe" src="https://www.google.com/maps/d/embed?mid=1taGC_zyX6G_n7rWUlnb9DCKweFdysCo&amp;ehbc=2E312F&amp;noprof=1" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe id="lokMapIframe" data-src="https://www.google.com/maps/d/embed?mid=1taGC_zyX6G_n7rWUlnb9DCKweFdysCo&amp;ehbc=2E312F&amp;noprof=1" title="Zemljevid prodajnih mest Valter-Siber" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     <button id="lokShowAllBtn" onclick="showAllLocs()" style="display:none;position:absolute;top:12px;left:12px;z-index:3;font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:rgba(4,2,1,.88);border:1px solid rgba(212,175,55,.45);border-radius:20px;padding:9px 18px;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.5);cursor:pointer;">← Prikaži vse trgovine</button>
-    <div id="lokMapOverlay" onclick="unlockMap()" style="position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;cursor:pointer;">
-      <span id="lokMapTapText" style="font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:rgba(4,2,1,.88);border:1px solid rgba(212,175,55,.45);border-radius:20px;padding:9px 18px;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.5);pointer-events:none;">👆 Tapni za premikanje zemljevida</span>
+    <div id="lokMapOverlay" onclick="handleMapOverlay()" style="position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:center;padding:16px;cursor:pointer;">
+      <span id="lokMapTapText" style="font-family:'Cinzel',serif;font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-align:center;color:var(--gold);background:rgba(4,2,1,.9);border:1px solid rgba(212,175,55,.45);border-radius:20px;padding:10px 18px;backdrop-filter:blur(8px);box-shadow:0 4px 14px rgba(0,0,0,.5);pointer-events:none;">Google zemljevid naložimo samo z dovoljenjem</span>
     </div>
   </div>
   <div class="kw" style="margin-bottom: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); max-width: 1200px; width: 92%; gap: 24px; padding: 0; align-items: start; justify-content: center;">
@@ -1264,7 +1293,10 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
         <div class="kr"><div class="kico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m4 7 8 6 8-6"/></svg></div><div class="ktx" id="email-container"><a href="#" onclick="revealEmail(); return false;" style="text-decoration: underline;">Prikaži e-pošto</a></div></div>
       </div>
     </div>
-    <div class="mw"><iframe src="https://maps.google.com/maps?q=Poljubinj+66A,+5220+Tolmin,+Slovenia&amp;z=15&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div class="mw" id="contactMapContainer">
+      <iframe id="contactMapIframe" data-src="https://maps.google.com/maps?q=Poljubinj+66A,+5220+Tolmin,+Slovenia&amp;z=15&amp;output=embed" title="Zemljevid domačije Valter-Siber" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <button class="map-consent-prompt" id="contactMapPrompt" type="button" onclick="openCookieSettings()">Google zemljevid naložimo samo z dovoljenjem</button>
+    </div>
   </div>
 </div>
 
@@ -1307,6 +1339,27 @@ nav .lsw .lb.on svg{filter:saturate(1.08) drop-shadow(0 0 4px rgba(212,175,55,.3
     <div class="agwrn" id="agWrn">Minister za zdravje opozarja: Prekomerno pitje alkohola škoduje zdravju!</div>
   </div>
 </div>
+
+<aside id="cookieConsent" class="cookie-consent" role="dialog" aria-labelledby="cookieTitle" aria-describedby="cookieSummary" hidden>
+  <div class="cookie-card">
+    <div class="cookie-copy">
+      <div class="cookie-title" id="cookieTitle">Nastavitve zasebnosti</div>
+      <p id="cookieSummary">Shranjujemo nujno potrditev starosti. Google zemljevid naložimo samo z dovoljenjem; Google lahko ob prikazu prejme tehnične podatke o povezavi in uporablja piškotke.</p>
+      <div class="cookie-details" id="cookieDetails" hidden>
+        <p id="cookieDetailsText">Nujna shramba: potrditev starosti in vaša izbira, ki jo hranimo do izbrisa oziroma največ 6 mesecev za izbiro zemljevida. Neobvezno: Google Zemljevidi na straneh Trgovine in Kontakt, naloženi šele po dovoljenju.</p>
+        <label class="cookie-toggle"><input id="cookieMapsChoice" type="checkbox"/><span id="cookieMapsLabel">Dovolim nalaganje Google Zemljevidov</span></label>
+        <a id="cookieGooglePrivacy" href="https://policies.google.com/privacy?hl=sl" target="_blank" rel="noopener noreferrer">Googlova politika zasebnosti</a>
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookieReject" type="button" onclick="saveCookieChoice(false)">Samo nujni</button>
+      <button id="cookieSettings" type="button" aria-expanded="false" onclick="toggleCookieDetails()">Nastavitve</button>
+      <button id="cookieAccept" type="button" onclick="saveCookieChoice(true)">Dovoli Google zemljevide</button>
+      <button id="cookieSave" type="button" onclick="saveCookieChoice(document.getElementById('cookieMapsChoice').checked)" hidden>Shrani izbiro</button>
+    </div>
+  </div>
+</aside>
+<button id="cookieReopen" class="cookie-reopen" type="button" onclick="openCookieSettings()" hidden>Piškotki</button>
 
 <script>
 var I = {
@@ -1392,6 +1445,7 @@ function filterB(cat, btn){
 
 function setLang(l){
   lang=l; btls=products[l]||BSL; var t=I[l];
+  if(typeof cookieCopy!=='undefined'&&typeof applyCookieLanguage==='function')applyCookieLanguage();
   document.documentElement.lang=l;
   if (t.seo_title) {
     document.title = t.seo_title;
@@ -2003,6 +2057,7 @@ var mapLocCoords = [
 var allLocsMapSrc = 'https://www.google.com/maps/d/embed?mid=1taGC_zyX6G_n7rWUlnb9DCKweFdysCo&ehbc=2E312F&noprof=1';
 
 function focusLoc(idx) {
+  if (!hasGoogleMapsConsent()) { openCookieSettings(); return; }
   var c = mapLocCoords[idx];
   if (!c) return;
   var iframe = document.getElementById('lokMapIframe');
@@ -2015,6 +2070,7 @@ function focusLoc(idx) {
 }
 
 function showAllLocs() {
+  if (!hasGoogleMapsConsent()) { openCookieSettings(); return; }
   var iframe = document.getElementById('lokMapIframe');
   if (iframe) iframe.src = allLocsMapSrc;
   var b = document.getElementById('lokShowAllBtn');
@@ -2029,6 +2085,90 @@ function unlockMap() {
 function lockMap() {
   var o = document.getElementById('lokMapOverlay');
   if (o) o.style.display = 'flex';
+}
+var cookieCopy = {
+  sl:{title:'Nastavitve zasebnosti',summary:'Starostno potrditev si zapomnimo v tej napravi. Zemljevid Google naložimo samo, če dovoliš; ob tem lahko Google prejme tehnične podatke in uporablja piškotke.',details:'Nujno: potrditev starosti ostane shranjena do izbrisa podatkov brskalnika. Izbiro za zemljevid hranimo 6 mesecev. Google Fonts se za prikaz pisave poveže z Googlom. Neobvezno: Google Zemljevidi za prikaz prodajnih mest in domačije; naložijo se šele po dovoljenju.',maps:'Dovolim nalaganje Google Zemljevidov',reject:'Samo nujni',settings:'Nastavitve',accept:'Dovoli Google Zemljevide',save:'Shrani izbiro',reopen:'Piškotki',mapPrompt:'Google zemljevid naložimo samo z dovoljenjem',mapTap:'👆 Tapni za premikanje zemljevida',contactPrompt:'Google zemljevid se naloži po dovoljenju'},
+  en:{title:'Privacy settings',summary:'We remember your age confirmation on this device. Google Maps loads only if you allow it; Google may receive technical data and use cookies.',details:'Necessary: age confirmation stays saved until browser data is cleared. Your map choice is kept for 6 months. Google Fonts contacts Google to display the typefaces. Optional: Google Maps for stores and the homestead; maps load only after permission.',maps:'Allow Google Maps to load',reject:'Necessary only',settings:'Settings',accept:'Allow Google Maps',save:'Save choices',reopen:'Cookies',mapPrompt:'Google Maps loads only with your permission',mapTap:'👆 Tap to move the map',contactPrompt:'Google Maps loads after permission'},
+  de:{title:'Datenschutzeinstellungen',summary:'Wir speichern die Altersbestätigung auf diesem Gerät. Google Maps wird nur mit Ihrer Erlaubnis geladen; Google kann dabei technische Daten erhalten und Cookies verwenden.',details:'Notwendig: Die Altersbestätigung bleibt gespeichert, bis die Browserdaten gelöscht werden. Ihre Kartenauswahl speichern wir 6 Monate. Google Fonts verbindet sich zur Anzeige der Schriftarten mit Google. Optional: Google Maps für Verkaufsstellen und den Hof; die Karten werden erst nach Zustimmung geladen.',maps:'Google Maps laden lassen',reject:'Nur notwendige',settings:'Einstellungen',accept:'Google Maps erlauben',save:'Auswahl speichern',reopen:'Cookies',mapPrompt:'Google Maps wird nur mit Ihrer Erlaubnis geladen',mapTap:'👆 Tippen, um die Karte zu bewegen',contactPrompt:'Google Maps wird nach Zustimmung geladen'},
+  it:{title:'Impostazioni privacy',summary:'Memorizziamo la conferma dell’età su questo dispositivo. Google Maps si carica solo con il tuo consenso; Google può ricevere dati tecnici e usare cookie.',details:'Necessario: la conferma dell’età resta memorizzata finché non cancelli i dati del browser. La scelta della mappa viene conservata per 6 mesi. Google Fonts contatta Google per visualizzare i caratteri. Facoltativo: Google Maps per i negozi e la tenuta; le mappe si caricano solo dopo il consenso.',maps:'Consenti il caricamento di Google Maps',reject:'Solo necessari',settings:'Impostazioni',accept:'Consenti Google Maps',save:'Salva scelta',reopen:'Cookie',mapPrompt:'Google Maps si carica solo con il tuo consenso',mapTap:'👆 Tocca per muovere la mappa',contactPrompt:'Google Maps si carica dopo il consenso'}
+};
+var savedCookieChoice = null;
+function hasGoogleMapsConsent(){return !!(savedCookieChoice&&savedCookieChoice.maps===true&&savedCookieChoice.expiresAt>Date.now());}
+function applyCookieLanguage(){
+  var t=cookieCopy[lang]||cookieCopy.sl;
+  var entries={cookieTitle:'title',cookieSummary:'summary',cookieDetailsText:'details',cookieMapsLabel:'maps',cookieReject:'reject',cookieSettings:'settings',cookieAccept:'accept',cookieSave:'save',cookieReopen:'reopen',lokMapTapText:hasGoogleMapsConsent()?'mapTap':'mapPrompt',contactMapPrompt:'contactPrompt'};
+  Object.keys(entries).forEach(function(id){var el=document.getElementById(id);if(el)el.textContent=t[entries[id]];});
+}
+function readCookieChoice(){
+  try{
+    var stored=JSON.parse(localStorage.getItem('site_cookie_choice_v1')||'null');
+    if(stored&&typeof stored.maps==='boolean'&&stored.expiresAt>Date.now())return stored;
+  }catch(e){}
+  return null;
+}
+function loadConsentMaps(){
+  if(!hasGoogleMapsConsent())return;
+  var iframe=document.getElementById('lokMapIframe');
+  if(iframe&&!iframe.getAttribute('src'))iframe.setAttribute('src',iframe.getAttribute('data-src'));
+  var contact=document.getElementById('contactMapIframe');
+  if(contact&&!contact.getAttribute('src'))contact.setAttribute('src',contact.getAttribute('data-src'));
+  var contactWrap=document.getElementById('contactMapContainer');
+  if(contactWrap)contactWrap.classList.add('map-enabled');
+}
+function unloadConsentMaps(){
+  ['lokMapIframe','contactMapIframe'].forEach(function(id){var iframe=document.getElementById(id);if(iframe)iframe.removeAttribute('src');});
+  var contactWrap=document.getElementById('contactMapContainer');
+  if(contactWrap)contactWrap.classList.remove('map-enabled');
+}
+function syncMapConsentView(){
+  applyCookieLanguage();
+  if(hasGoogleMapsConsent()){
+    loadConsentMaps();
+    if(window.matchMedia&&window.matchMedia('(pointer: fine)').matches&&!('ontouchstart' in window))unlockMap();
+    else lockMap();
+  }else{
+    unloadConsentMaps();
+    lockMap();
+  }
+}
+function showCookiePanel(settings){
+  var panel=document.getElementById('cookieConsent');
+  var details=document.getElementById('cookieDetails');
+  var choice=document.getElementById('cookieMapsChoice');
+  var isSettings=!!settings;
+  details.hidden=!isSettings;
+  choice.checked=hasGoogleMapsConsent();
+  document.getElementById('cookieReject').hidden=isSettings;
+  document.getElementById('cookieSettings').hidden=isSettings;
+  document.getElementById('cookieAccept').hidden=isSettings;
+  document.getElementById('cookieSave').hidden=!isSettings;
+  document.getElementById('cookieSettings').setAttribute('aria-expanded',String(isSettings));
+  panel.hidden=false;
+  document.getElementById('cookieReopen').hidden=true;
+  document.getElementById(isSettings?'cookieMapsChoice':'cookieReject').focus();
+}
+function openCookieSettings(){showCookiePanel(true);}
+function toggleCookieDetails(){showCookiePanel(true);}
+function saveCookieChoice(allowMaps){
+  savedCookieChoice={maps:!!allowMaps,expiresAt:Date.now()+180*24*60*60*1000};
+  try{localStorage.setItem('site_cookie_choice_v1',JSON.stringify(savedCookieChoice));}catch(e){}
+  document.getElementById('cookieConsent').hidden=true;
+  document.getElementById('cookieReopen').hidden=false;
+  syncMapConsentView();
+}
+function handleMapOverlay(){if(hasGoogleMapsConsent())unlockMap();else openCookieSettings();}
+function initCookieConsent(){
+  savedCookieChoice=readCookieChoice();
+  applyCookieLanguage();
+  if(savedCookieChoice){
+    document.getElementById('cookieConsent').hidden=true;
+    document.getElementById('cookieReopen').hidden=false;
+    syncMapConsentView();
+  }else{
+    document.getElementById('cookieConsent').hidden=false;
+    document.getElementById('cookieReopen').hidden=true;
+    lockMap();
+  }
 }
 if (window.matchMedia && window.matchMedia('(pointer: fine)').matches && !('ontouchstart' in window)) {
   // Miška (desktop) — overlay ni potreben
@@ -2055,6 +2195,7 @@ document.addEventListener('touchmove',function(e){
   var t=e.touches[0],dx=t.clientX-pageSwipeStart.x,dy=t.clientY-pageSwipeStart.y;
   if(Math.abs(dx)>Math.abs(dy)*1.1)e.preventDefault();
 },{passive:false,capture:true});
+initCookieConsent();
 // On phones and tablets, keep language choice on the entry screen and offer it again on Contact.
 var mobileLanguageRow = document.getElementById('lswHero');
 var contactLayout = document.querySelector('#pg-kontakt .kw');
